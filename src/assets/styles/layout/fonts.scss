@@ -41,11 +41,11 @@ $SansusWebissimo: 'SansusWebissimo';
 @mixin fontface($fontName, $urlName: $fontName, $weight: normal, $style: normal) {
   @font-face {
     font-family: '#{$fontName}';
-    src: url('../assets/fonts/#{$urlName}/#{$urlName}.eot');
-    src: url('../assets/fonts/#{$urlName}/#{$urlName}.eot#iefix') format('embedded-opentype'),
-    url('../assets/fonts/#{$urlName}/#{$urlName}.woff') format('woff'),
-    url('../assets/fonts/#{$urlName}/#{$urlName}.ttf') format('truetype'),
-    url('../assets/fonts/#{$urlName}/#{$urlName}.svg') format('svg');
+    src: url('assets/fonts/#{$urlName}/#{$urlName}.eot');
+    src: url('assets/fonts/#{$urlName}/#{$urlName}.eot#iefix') format('embedded-opentype'),
+    url('assets/fonts/#{$urlName}/#{$urlName}.woff') format('woff'),
+    url('assets/fonts/#{$urlName}/#{$urlName}.ttf') format('truetype'),
+    url('assets/fonts/#{$urlName}/#{$urlName}.svg') format('svg');
     font-weight: $weight;
     font-style: $style;
   }
