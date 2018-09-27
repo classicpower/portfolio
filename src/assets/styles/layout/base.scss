@@ -1,0 +1,158 @@
+html {
+  @include tablets() {
+    font-size: 16px;
+  }
+  @include mobile() {
+    font-size: 15px;
+  }
+  @include mini() {
+    font-size: 14px;
+  }
+}
+
+body,
+html {
+  height: 100%;
+}
+
+body {
+  font-size: rem(16px);
+  line-height: 1.42;
+  color: $text-color;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  @include roboto();
+}
+
+.wrapper {
+  overflow: hidden;
+  min-height: 100%;
+  position: relative;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  z-index: 1;
+}
+
+.footer-container {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  margin-bottom: rem(39px);
+}
+
+.copyright {
+  text-align: center;
+  color: #fff;
+  @include roboto('light');
+  padding: rem(9px) 0;
+}
+
+.section {
+  min-height: 650px;
+  height: 100vh;
+  position: relative;
+  &__title {
+    display: flex;
+    justify-content: center;
+    position: relative;
+    width: 100%;
+    &-img {
+      width: 100%;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      opacity: .1;
+      &--works,
+      &--reviews {
+        height: rem(165px);
+        fill: #93c42e;
+      }
+      &--header {
+        height: (310px);
+        fill: #fff;
+      }
+    }
+  }
+}
+
+.triangle {
+  position: absolute;
+  top: -200px;
+  left: 0;
+  right: 0;
+  height: 200px;
+  display: flex;
+  &-left,
+  &-right {
+    width: 50%;
+  }
+  &-left {
+    clip-path: polygon(0 100%, 0 0, 100% 100%);
+    background-color: #f8f9f5;
+  }
+  &-right {
+    clip-path: polygon(0 100%, 100% 0, 100% 100%);
+    background-color: #f8f9f5;
+  }
+}
+
+.title {
+  color: $grey;
+  @include sansus();
+  font-size: rem(63px);
+  text-transform: uppercase;
+  position: relative;
+  padding: rem(70px) 0;
+  @include underline(60, $grey)
+}
+
+.subtitle {
+  @include subtitle($text-color);
+  &--color_white {
+    @include subtitle(#fff)
+  }
+}
+
+.offscroll {
+  overflow: hidden;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  padding: 0;
+  margin: 0;
+  list-style: none;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-weight: normal;
+  margin: 0;
+}
+
+p {
+  margin: 0;
+  padding: 0;
+}
+
+button[type="button"] {
+  cursor: pointer;
+}
+
+img {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}

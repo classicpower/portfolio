@@ -1,0 +1,16 @@
+.welcome-menu {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    @include itemForm();
+    width: (100% / 3);
+  }
+  &__link {
+    display: block;
+    @include roboto('medium');
+    text-decoration: none;
+    color: #fff;
+    padding: 12px 0;
+  }
+}

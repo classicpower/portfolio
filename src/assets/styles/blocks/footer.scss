@@ -1,0 +1,53 @@
+.footer {
+  min-height: $height-footer;
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  &__copyright {
+    background-color: rgba($green, .85);
+  }
+  &__list {
+    background-color: rgba($grey, .85);
+    width: 100%;
+    display: flex;
+    padding: 0 30px;
+    justify-content: space-between;
+  }
+  &__item {
+    width: calc(100% / 3 - 120px);
+    padding: 30px 0 50px;
+  }
+  &__desc {
+    @include roboto('light');
+    color: #fff;
+  }
+  &__menu {
+    &-list {
+      display: flex;
+      margin: 0 -20px 30px;
+    }
+    &-item {
+      padding: 0 20px;
+    }
+    &-link {
+      color: #fff;
+      text-decoration: none;
+      @include roboto('bold');
+    }
+  }
+  &__social {
+    display: flex;
+  }
+  &__quote {
+    opacity: .5;
+    color: #fff;
+    &-desc {
+      @include roboto('lightItalic');
+      padding-bottom: 7px;
+    }
+    &-author {
+      @include roboto('boldItalic');
+    }
+  }
+}

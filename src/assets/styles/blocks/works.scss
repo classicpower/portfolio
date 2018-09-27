@@ -1,0 +1,52 @@
+.works {
+  background-color: #f8f9f5;
+  &__container {
+    display: flex;
+  }
+  &__desc {
+    background-color: #ebefe2;
+    display: flex;
+    flex-direction: column;
+    &-wrap {
+      height: 100%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    &-content {
+      text-align: center;
+    }
+    &-title {
+      @include sansus();
+      color: $text-color;
+      font-size: rem(35px);
+      text-transform: uppercase;
+      position: relative;
+      padding-bottom: rem(52px);
+      @include underline(34, $text-color)
+    }
+    &-subtitle {
+      @include roboto("medium");
+      color: $green;
+      text-transform: uppercase;
+      padding-bottom: rem(58px);
+    }
+    &-link {
+      @include btn(#fff, $light-green, $green);
+      border-radius: 25px;
+      border: none;
+      padding: rem(16px) rem(21px) rem(15px) rem(49px);
+      position: relative;
+      text-decoration: none;
+    }
+    &-icon {
+      fill: #fff;
+      position: absolute;
+      top: 50%;
+      left: 18px;
+      transform: translateY(-50%);
+      width: 20px;
+      height: 19px;
+    }
+  }
+}

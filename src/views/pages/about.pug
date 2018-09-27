@@ -1,0 +1,83 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Алексей Карасев | Обо мне'
+
+block scripts
+  script(src='about.bundle.js')
+  
+block header_title
+  .header__title
+    +icon("portfolio_header","section__title-img section__title-img--header")
+block user
+  .user__wrap.user__wrap--transparent
+    +user()
+block section_about
+  section.about.section
+    .about__triangle.triangle
+      .about__triangle-left.triangle-left
+      .about__triangle-right.triangle-right
+    .about__container
+      .about__col
+        .about__col-wrap
+          .about__col-side
+            .section__title
+              +icon("about_header","section__title-img section__title-img--works")
+              h2.about__title.title Обо мне
+          .about__col-side
+            .about__user.user
+              .about__user-image.user__image
+                +image("alex-about.jpg","Алексей Карасев","user__image-full")
+              .about__user-info.user__info
+                h3.about__user-title.subtitle кто я
+                .about__user-desc.user__desc
+                  p Я веб разработчик из Новосибирска. Мне 27 лет. Я занимаюсь разработкой современных сайтов и приложений. Мне нравится делать интересные и современные проекты.
+                  p Этот сайт я сделал в рамках обучения в Школе онлайн образования LoftSchool. Чуть позже я освежу в нём свой контент. А пока посмотрите, как тут всё классно и красиво!
+      .about__col.about__col--color_cream
+        .about__col-wrap
+          .about__col-side.about__col-side--full
+            .about__user.user
+              h3.about__user-title.subtitle Чем я могу быть вам полезен
+              .about__user-desc.user__desc
+                p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
+            .about__info
+              .skills
+                - 
+                  var skills = [
+                    ['Frontend', [['Html5', 30], ['css3', 50], ['JavaScript & jQuery', 70]]],
+                    ['Backend', [['php', 30], ['mySQL', 50], ['Node.js & npm', 70], ['Mongo.db', 70]]],
+                    ['Workflow', [['git', 30], ['gulp', 50], ['webpack', 70]]],
+                  ]
+                ul.skills__list
+                  each skillsrow in skills
+                    li.skills__item.skills__row
+                      .skills__row-title #{skillsrow[0]}
+                      ul.skills__row-list
+                        each skill in skillsrow[1]
+                          li.skills__row-item
+                            figure.skill
+                              svg(viewBox="0 0 120 120" width="120px" height="120px" preserveAspectRatio="none").skill__figure
+                                circle.skill__circle.skill__circle-back(cx="60" cy="60" r="50")
+                                circle.skill__circle.skill__circle-front(cx="60" cy="60" r="50")
+                              .skill__title #{skill[0]}
+block section_contacts                            
+  section.contacts.section.js-add-padding
+    .contacts__bg
+      .map
+    .contacts__container
+      .user-data
+        h3.user-data__title.subtitle Контакты
+        .user-data__container
+          ul.user-contacts__list
+            li.user-contacts__item
+              .contacts-cell
+                +icon("skype","contacts-cell__icon contacts-cell__icon--skype")
+                a.contacts-cell__link(href="skype:skype") skype
+            li.user-contacts__item
+              .contacts-cell
+                +icon("envelope","contacts-cell__icon contacts-cell__icon--mail")
+                a.contacts-cell__link(href="mailto:karasev.dev@gmail.com") karasev.dev@gmail.com
+            li.user-contacts__item
+              .contacts-cell
+                +icon("phone","contacts-cell__icon contacts-cell__icon--phone")
+                a.contacts-cell__link(href="tel:+79312009324") +7 931 200 93 24

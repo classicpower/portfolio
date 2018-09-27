@@ -1,0 +1,25 @@
+.scroll {
+  opacity: 0.7;
+  transition: opacity .3s;
+  &--big {
+    opacity: 1;
+    .scroll__image{  
+      width: 43px;
+      height: 27px;
+    }
+  }
+  &:hover {
+    opacity: 1;
+  }
+  &__btn {
+    @include offBtnStyle();
+  }
+  &__image {
+    fill: #fff;
+    width: 26px;
+    height: 16px;
+  }
+  &--up {
+    transform: rotate(180deg)
+  }
+}

@@ -1,0 +1,39 @@
+.contacts {
+  background-image: url('../assets/images/bg/map.jpg');
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
+  padding-bottom: $height-footer;
+  &__container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+  }
+  &-cell {
+    display: flex;
+    align-items: center;
+    &__link {
+      @include roboto('medium');
+      opacity: .8;
+      text-decoration: none;
+      color: $text-color;
+    }
+    &__icon {
+      fill: $green;
+      margin-right: 10px;
+      &--skype {
+        width: 24px;
+        height: 24px;
+      }
+      &--mail{
+        width: 23px;
+        height: 16px;
+      }
+      &--phone{
+        width: 17px;
+        height: 20px;
+      }
+    }
+  }
+}

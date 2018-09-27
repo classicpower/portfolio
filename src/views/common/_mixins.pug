@@ -1,0 +1,53 @@
+mixin icon(iconName, iconClass)
+  svg(class=`${iconClass}`)
+    use(xlink:href=`/assets/images/icons/sprite.svg#${iconName}`)
+
+mixin image(imagePath, imageAlt, imageClass)
+  img(src=`/assets/images/content/${imagePath}`, alt=`${imageAlt}`, class=`${imageClass}`)
+
+mixin social(mod)
+  div(class="social social--" + mod)
+    ul.social__list
+      li.social__item
+        a.social__link(href='#', title='VK', target='_blank')
+          +icon('vk', 'social__icon social__icon--vk')
+      li.social__item
+        a.social__link(href='#', title='github', target='_blank')
+          +icon('github', 'social__icon social__icon--github')
+      li.social__item
+        a.social__link(href='#', title='Telegram', target='_blank')
+          +icon('telegram_logo', 'social__icon social__icon--tg')
+
+mixin user()
+  .user
+    .user__image
+      +image("alex-about.jpg","Алексей Карасев","user__image-pic")
+    .user__info
+      h1.user__title Алексей Карасев
+      .user__subtitle Личный сайт веб разработчика
+
+mixin favicon()
+  link(rel="apple-touch-icon" sizes="180x180" href="/assets/images/favicon/apple-touch-icon.png")
+  link(rel="icon" type="image/png" sizes="32x32" href="/assets/images/favicon/favicon-32x32.png")
+  link(rel="icon" type="image/png" sizes="16x16" href="/assets/images/favicon/favicon-16x16.png")
+  link(rel="manifest" href="/assets/images/favicon/site.webmanifest")
+  link(rel="mask-icon" href="/assets/images/favicon/safari-pinned-tab.svg" color="#5bbad5")
+  meta(name="msapplication-TileColor" content="#da532c")
+  meta(name="theme-color" content="#ffffff")
+
+mixin scroll(mod)
+  div(class='scroll scroll--' + `${mod}`)
+    button.scroll__btn(type="button")
+      +icon("arrow_down","scroll__image")
+
+mixin fixedMenu()
+  nav.fixed-menu
+    ul.fixed-menu__list
+      li.fixed-menu__item.fixed-menu__item--active
+        a.fixed-menu__link(href="works.html") Мои работы
+      li.fixed-menu__item
+        a.fixed-menu__link(href="blog.html") Блог
+      li.fixed-menu__item
+        a.fixed-menu__link(href="about.html") Обо мне
+      li.fixed-menu__item
+        a.fixed-menu__link(href="index.html") Авторизация

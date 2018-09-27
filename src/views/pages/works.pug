@@ -1,0 +1,83 @@
+extends ../main.layout.pug
+
+block variables
+  - var title = 'Алексей Карасев | Мои работы'
+
+block scripts
+  script(src='about.bundle.js')
+
+block header_title
+  .header__title
+    +icon("portfolio_header","section__title-img section__title-img--header")
+block user
+  .user__wrap.user__wrap--transparent
+    +user()
+block section_works
+  section.section.works
+    .works__triangle.triangle
+      .works__triangle-left.triangle-left
+      .works__triangle-right.triangle-right
+    .section__title
+      +icon("works_header","section__title-img section__title-img--works")
+      h2.works__title.title Мои работы
+    .works__slider
+      .slider.js-slider
+        .slider__desc.js-slider-desc
+          .slider__desc-wrap
+            .slider__desc-content
+              h3.slider__subtitle.subtitle Сайт школы онлайн образования
+              h4.slider__desc-subtitle html , css, javascript
+              a.slider__desc-link(href="#", title="Посмотреть сайт") Посмотреть сайт
+                +icon("link", "slider__desc-icon")  
+        .slider__main
+          +image("layer1small.png", "Первый слайд", "slider__image")
+
+        button.slider__up(type="button")
+          .slider__overlay
+          +image("layer1small.png", "Первый слайд", "slider__image")
+          .slider__scroll
+            +icon("arrow_down","slider__scroll-icon slider__scroll-icon--up")
+        button.slider__down(type="button")
+          +image("layer1small.png", "Первый слайд", "slider__image")
+          .slider__overlay
+          .slider__scroll
+            +icon("arrow_down","slider__scroll-icon slider__scroll-icon--down")
+block section_reviews
+  section.reviews.section.js-add-padding
+    .container.reviews__container
+      .section__title
+        +icon("about_header","section__title-img section__title-img--reviews")
+        h2.reviews__title.title Что обо мне говорят
+      .reviews__content
+        .reviews__content-wrap
+          ul.reviews__content-list
+            li.reviews__content-item
+                .reviews__content-image 
+                  +image("dmitry.jpg", "Дмитрий Ковальчук", "reviews__content-image__pic")
+                .reviews__content-text
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                h3.reviews__content-title Ковальчук Дмитрий
+                .reviews__content-subtitle — основатель Loftschool
+            li.reviews__content-item
+                .reviews__content-image 
+                  +image("vladimir.jpg", "Владимир Сабанцев", "reviews__content-image__pic")
+                .reviews__content-text
+                  p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
+                h3.reviews__content-title Владимир Сабанцев
+                .reviews__content-subtitle — преподаватель
+      .reviews__form
+        form.form.form--bg_color(action="")
+          .form__overlay
+          h2.form__subtitle.subtitle Связаться со мной
+          .form__row.form__row--reviews
+            input.form__input.form__input--reviews(type="text" name="name" placeholder="Имя")
+          .form__row.form__row--reviews
+            input.form__input.form__input--reviews(type="text" name="email" placeholder="Email")
+          .form__row.form__row--reviews
+            textarea.form__textarea(name="message" placeholder="Ваше сообщение")
+          .form__row.form__row--reviews
+            .form__list
+              input.form__submit(type="submit" value="Отправить")
+              input.form__reset(type="reset" value="Очистить")
+      .reviews__scroll
+        +scroll("up")

@@ -1,0 +1,105 @@
+.blog {
+  position: relative;
+  background-color: #faf8f0;
+  padding-bottom: $height-footer;
+  &__triangle {
+    &-left,
+    &-right {
+      background-color: #faf8f0;
+    }
+  }
+  &__title {
+    color: #fff;
+    @include sansus();
+    font-size: 63px;
+    text-transform: uppercase;
+    position: relative;
+    padding: 0 0 40px;
+    @include underline(25, #fff)
+  }
+  &__desc {
+    color: #fff
+  }
+  &__container {
+    display: flex;
+    justify-content: center;
+    padding: 70px 0;
+  }
+  &__menu {
+    flex-basis: 20%;
+    text-align: right;
+    margin-right: 5%;
+  }
+  &__item {
+    position: relative;
+    &--active,
+    &:hover {
+      &::after {
+        content: "";
+        margin-left: 17px;
+        height: 100%;
+        width: 3px;
+        background-color: $light-green;
+        position: absolute;
+        top: 0;
+      }
+      .blog__link {
+        transition: .5s;
+        @include roboto("bold");
+        color: $light-green;
+      }
+    }
+  }
+  &__link {
+    color: #455a64;
+    text-decoration: none;
+    display: block;
+    padding: 15px 0 14px;
+  }
+  &__content {
+    flex-basis: 75%;
+    max-width: 880px;
+  }
+}
+
+.post {
+  position: relative;
+  padding-bottom: 140px;
+  &:last-child{
+    padding-bottom: 0;
+    &::after{
+      display: none;
+    }
+  }
+  &::after{
+    content: "";
+    display: block;
+    max-width: 680px;
+    width: 100%;
+    height: 5px;
+    background-color: rgba($grey, .1);
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    margin-bottom: 70px;
+
+
+  }
+  &__header {
+    margin-bottom: 25px;
+  }
+  &__title {
+    @include sansus();
+    font-size: 35px;
+  }
+  &__link {
+    color: #455a64;
+    text-decoration: none;
+  }
+  &__meta {
+    margin-bottom: 25px;
+  }
+  &__date{
+    color: $light-green;
+  }
+}

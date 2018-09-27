@@ -1,0 +1,101 @@
+@mixin btn($color, $bkg, $hover) {
+  color: $color;
+  background-color: $bkg;
+  cursor: pointer;
+  transition: 0.3s;
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: $hover;
+    border-color: $bkg;
+  }
+}
+
+@mixin offBtnStyle {
+  padding: 0;
+  background-color: transparent;
+  border: none;
+  &:focus {
+    outline: none
+  }
+}
+
+@mixin input() {
+  color: #333;
+  @include roboto();
+  border: none;
+  padding: 16px 20px;
+  box-sizing: border-box;
+  &:focus {
+    outline: none;
+    border: none;
+  }
+}
+
+@mixin underline($margin, $color) {
+  &::after {
+    content: "";
+    position: absolute;
+    left: 50%;
+    bottom: 0;
+    transform: translateX(-50%);
+    width: 90px;
+    height: 3px;
+    margin-bottom: $margin + px;
+    background-color: $color;
+  }
+}
+
+@mixin subtitle($color) {
+  color: $color;
+  font-size: 35px;
+  @include sansus();
+  text-transform: uppercase;
+  text-align: center;
+  position: relative;
+  padding-bottom: 52px;
+  @include underline(34, $color);
+}
+
+@mixin itemForm() {
+  text-align: center;
+  height: 45px;
+  color: #fff;
+  background-color: $light-green;
+  border-right: 2px solid rgba(#dee3e7, .5);
+  transition: .3s;
+  &:last-child {
+    border: none;
+  }
+  &:focus {
+    outline: none;
+  }
+  &:hover {
+    background-color: $green;
+  }
+}
+
+// PX to REM function
+@function rem($px: 16px) {
+  @return ($px / 16px)+rem;
+}
+
+// Breakpoints  
+@mixin tablets {
+  @media screen and (max-width: $tablets) {
+    @content;
+  }
+}
+
+@mixin mobile {
+  @media screen and (max-width: $mobile) {
+    @content;
+  }
+}
+
+@mixin mini {
+  @media screen and (max-width: $mini) {
+    @content;
+  }
+}

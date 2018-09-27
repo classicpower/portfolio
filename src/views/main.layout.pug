@@ -1,0 +1,28 @@
+include ./common/_mixins
+block variables
+
+doctype html
+html(lang="ru")
+  head
+    meta(charset="utf-8")
+    meta(content="ie=edge" http-equiv="x-ua-compatible")
+    meta(content="width=device-width, initial-scale=1" name="viewport")
+    +favicon()
+    
+    title #{title}
+
+    link(rel='stylesheet' href='main.min.css')
+  body
+    .wrapper
+      include ./common/header
+      main.main
+        block section_works
+        block section_reviews
+        block section_about
+        block section_contacts
+        block section_blog
+      include ./common/footer
+      +fixedMenu
+    script(src='bootloader.bundle.js')
+    script(src='vendor.bundle.js')
+    block scripts

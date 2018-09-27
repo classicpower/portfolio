@@ -1,0 +1,55 @@
+.skills {
+  &__list {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+  }
+  &__item {
+    width: 100%;
+    margin: 0 20px 40px;
+  }
+  &__row {
+    &-list {
+      display: flex;
+    }
+    &-item {
+      padding: 0 20px;
+    }
+    &-title {
+      @include roboto("medium");
+      font-size: 28px;
+      padding-bottom: 20px;
+    }
+  }
+}
+
+.skill {
+  display: block;
+  position: relative;
+  width: 120px;
+  height: 120px;
+  margin: 0;
+  &__figure {
+    transform: rotate(-90deg);
+  }
+  &__circle {
+    fill: none;
+    stroke-width: 20px;
+    stroke: #dfdcd5;
+    &-front {
+      stroke: $green;
+      stroke-dasharray: 255;
+      stroke-dashoffset: 50;
+    }
+  }
+  &__title {
+    @include roboto("medium");
+    font-size: 13px;
+    text-align: center;
+    text-transform: uppercase;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+}

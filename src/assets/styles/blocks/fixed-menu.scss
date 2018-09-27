@@ -1,0 +1,44 @@
+.fixed-menu {
+  position: fixed;
+  background-color: rgba($light-green, .87);
+  height: 100%;
+  width: 100%;
+  top: 0;
+  bottom: 0;
+  left: -9999px;
+  right: 0;
+  z-index: 5;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transition: .9s;
+  &--open{
+    left: 0;
+  }
+  &__item {
+    padding-bottom: 80px;
+    text-align: center;
+    position: relative;
+    transition: .5s;
+    &--active, &:hover{
+      &::after {
+        content: "";
+        width: 90px;
+        height: 3px;
+        position: absolute;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+        margin-bottom: 50px;
+        background-color: #fff;
+      }
+    }
+  }
+  &__link {
+    @include sansus();
+    font-size: 63px;
+    text-transform: uppercase;
+    color: #fff;
+    text-decoration: none;
+  }
+}

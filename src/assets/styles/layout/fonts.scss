@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto:300,400,500,700&subset=cyrillic');
+
+
+@mixin roboto($style: 'regular') {
+  font-family: 'Roboto', Helvetica, sans-serif;
+
+  @if $style=='regular' {
+    font-weight: 400;
+  }
+  @if $style=='italic' {
+    font-weight: 400;
+    font-style: italic;
+  }
+  @if $style=='light' {
+    font-weight: 300;
+  }
+  @if $style=='lightItalic' {
+    font-weight: 300;
+    font-style: italic;
+  }
+  @if $style=='medium' {
+    font-weight: 500;
+  }
+  @if $style=='mediumItalic' {
+    font-weight: 500;
+    font-style: italic;
+  }
+  @if $style=='bold' {
+    font-weight: 700;
+  }
+  @if $style=='boldItalic' {
+    font-weight: 700;
+    font-style: italic;
+  }
+}
+//var fonts
+$FontAwesome: 'FontAwesome';
+$SansusWebissimo: 'SansusWebissimo';
+
+//mixin fontface
+@mixin fontface($fontName, $urlName: $fontName, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: '#{$fontName}';
+    src: url('../assets/fonts/#{$urlName}/#{$urlName}.eot');
+    src: url('../assets/fonts/#{$urlName}/#{$urlName}.eot#iefix') format('embedded-opentype'),
+    url('../assets/fonts/#{$urlName}/#{$urlName}.woff') format('woff'),
+    url('../assets/fonts/#{$urlName}/#{$urlName}.ttf') format('truetype'),
+    url('../assets/fonts/#{$urlName}/#{$urlName}.svg') format('svg');
+    font-weight: $weight;
+    font-style: $style;
+  }
+}
+@include fontface($FontAwesome, $FontAwesome, normal, normal);
+@include fontface($SansusWebissimo, $SansusWebissimo, normal, normal);
+
+@mixin fontAwesome() {
+  font-family: 'FontAwesome', Helvetica, sans-serif;
+}
+@mixin sansus() {
+  font-family: 'SansusWebissimo', Helvetica, sans-serif;
+}
