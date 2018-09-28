@@ -111,7 +111,8 @@
 						</div>
 					</div>
 				</section>
-				<section class="reviews section js-add-padding">
+				<section class="reviews js-add-padding" id="reviews">
+					<div class="reviews__bg"></div>
 					<div class="container reviews__container">
 						<div class="section__title">
 							<svg class="section__title-img section__title-img--reviews">
@@ -143,9 +144,11 @@
 								</ul>
 							</div>
 						</div>
-						<div class="reviews__form">
-							<form class="form form--bg_color" action="">
-								<div class="form__overlay"></div>
+					</div>
+					<div class="reviews__form">
+						<div class="form__blur"></div>
+						<div class="form__container">
+							<form class="form form__reviews form--bg_color" id="form" action="">
 								<h2 class="form__subtitle subtitle">Связаться со мной</h2>
 								<div class="form__row form__row--reviews">
 									<input class="form__input form__input--reviews" type="text" name="name" placeholder="Имя">
@@ -164,14 +167,14 @@
 								</div>
 							</form>
 						</div>
-						<div class="reviews__scroll">
-							<div class="scroll scroll--up">
-								<button class="scroll__btn" type="button">
-									<svg class="scroll__image">
-										<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
-									</svg>
-								</button>
-							</div>
+					</div>
+					<div class="reviews__scroll">
+						<div class="scroll scroll--up">
+							<button class="scroll__btn" type="button">
+								<svg class="scroll__image">
+									<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+								</svg>
+							</button>
 						</div>
 					</div>
 				</section>
@@ -231,6 +234,6 @@
 		</div>
 		<script src="bootloader.bundle.js"></script>
 		<script src="vendor.bundle.js"></script>
-		<script src="about.bundle.js"></script>
+		<script src="works.bundle.js"></script>
 	</body>
 </html>

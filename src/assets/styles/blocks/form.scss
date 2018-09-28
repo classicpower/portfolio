@@ -7,15 +7,16 @@
   &--bg_color {
     background-color: rgba(#dadbd6, .6);
   }
-  &__overlay {
-    background-color: rgba(255, 255, 255, .15);
-    position: absolute;
-    top: 0;
-    left: 0;
-    right: 0;
-    bottom: 0;
-    z-index: 1;
-    filter: blur(15px);
+  &__container{
+    margin-top: -481px;
+  }
+  &__blur {
+    background-image: url("assets/images/bg/reviews-bg.png");
+    background-repeat: no-repeat;
+    background-position: -783px -510px;
+    height: 100%;
+    width: 100%;
+    filter: blur(5px)
   }
   &__row {
     z-index: 2;
@@ -54,7 +55,9 @@
   }
   &__submit,
   &__reset {
-    @include btn(#fff, $light-green, $green);
+    @include btn(#fff,
+    $light-green,
+    $green);
     @include roboto('medium');
     width: 100%;
     height: 45px;
@@ -67,7 +70,7 @@
       border: none;
     }
   }
-  &__button{
+  &__button {
     @include itemForm();
     @include roboto('medium');
     width: 100%;

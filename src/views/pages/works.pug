@@ -4,11 +4,14 @@ block variables
   - var title = 'Алексей Карасев | Мои работы'
 
 block scripts
-  script(src='about.bundle.js')
+  script(src='works.bundle.js')
 
 block header_title
   .header__title
     +icon("portfolio_header","section__title-img section__title-img--header")
+block header_scroll  
+  .header__scroll
+    +scroll("down", "normal")
 block user
   .user__wrap.user__wrap--transparent
     +user()
@@ -43,7 +46,9 @@ block section_works
           .slider__scroll
             +icon("arrow_down","slider__scroll-icon slider__scroll-icon--down")
 block section_reviews
-  section.reviews.section.js-add-padding
+  section#reviews.reviews.js-add-padding
+    .reviews__bg
+      //- img(src="assets/images/bg/reviews-bg.png", alt="фон отзывы")
     .container.reviews__container
       .section__title
         +icon("about_header","section__title-img section__title-img--reviews")
@@ -65,9 +70,10 @@ block section_reviews
                   p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
                 h3.reviews__content-title Владимир Сабанцев
                 .reviews__content-subtitle — преподаватель
-      .reviews__form
-        form.form.form--bg_color(action="")
-          .form__overlay
+    .reviews__form
+      .form__blur
+      .form__container
+        form#form.form.form__reviews.form--bg_color(action="")
           h2.form__subtitle.subtitle Связаться со мной
           .form__row.form__row--reviews
             input.form__input.form__input--reviews(type="text" name="name" placeholder="Имя")
@@ -79,5 +85,5 @@ block section_reviews
             .form__list
               input.form__submit(type="submit" value="Отправить")
               input.form__reset(type="reset" value="Очистить")
-      .reviews__scroll
-        +scroll("up")
+    .reviews__scroll
+      +scroll("up")

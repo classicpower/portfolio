@@ -1,12 +1,20 @@
 .reviews {
-  background-image: url("assets/images/bg/reviews-bg.png");
+  position: relative;
+  min-height: 650px;
   background-color: #f4f5f0;
-  background-repeat: no-repeat;
-  background-position: bottom center;
-  background-size: cover;
-  height: 100%;
-  width: 100%;
   padding-bottom: $height-footer;
+  &__bg{
+    background-image: url("assets/images/bg/reviews-bg.png");
+    background-repeat: no-repeat;
+    background-position: bottom;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+  }
   &__container{
     position: relative;
   }
@@ -57,7 +65,12 @@
     }
   }
   &__form {
-    padding-bottom: 70px;
+    position: relative;
+    overflow: hidden;
+    height: 481px;
+    max-width: 380px;
+    margin: 0 auto 70px;
+
     &-title {
       font-size: 35px;
       @include sansus();
@@ -79,7 +92,7 @@
   }
   &__scroll{
     text-align: center;
-    padding-bottom: 70px;
+    margin-bottom: 70px;
 
   }
 }

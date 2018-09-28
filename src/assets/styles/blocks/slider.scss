@@ -1,6 +1,5 @@
 .slider {
   display: grid;
-  height: 75vh;
   grid-template-rows: 1fr 35% 35%;
   grid-template-columns: 1fr 25% 25%;
   grid-template-areas: "desc main main" "desc main main" "desc up down";
