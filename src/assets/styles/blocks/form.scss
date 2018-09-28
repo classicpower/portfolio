@@ -14,9 +14,10 @@
     background-image: url("assets/images/bg/reviews-bg.png");
     background-repeat: no-repeat;
     background-position: -783px -510px;
+    background-size: auto;
     height: 100%;
     width: 100%;
-    filter: blur(5px)
+    // filter: blur(5px);
   }
   &__row {
     z-index: 2;

@@ -7,7 +7,7 @@ function addPadding() {
     const padding = paddings[i];
     padding.style.paddingBottom = height + 'px';
   }
-}
+};
+addPadding();
 window.addEventListener('resize', addPadding);
-window.addEventListener('load', addPadding);
 
