@@ -1,11 +1,9 @@
-console.log('hamburger ON');
+
 const toggle = document.querySelector(".hamburger");
 const menu = document.querySelector(".fixed-menu");
 const body = document.body;
-console.log(toggle);
 
 toggle.addEventListener("click", e => {
-  console.log("click");
   e.preventDefault();
   if (toggle.classList.contains("hamburger--active")) {
     toggle.classList.remove("hamburger--active");
