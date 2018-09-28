@@ -4,14 +4,16 @@
   background-color: #f4f5f0;
   padding-bottom: $height-footer;
   &__bg{
-    background-image: url("assets/images/bg/reviews-bg.png");
-    background-repeat: no-repeat;
-    background-position: bottom;
+    // background-image: url("assets/images/bg/reviews-bg.png");
+    // background-repeat: no-repeat;
+    // background-position: bottom;
     position: absolute;
     top: 0;
     left: 0;
     right: 0;
     bottom: 0;
+    min-width: 900px;
+
   }
   &__container{
     position: relative;
