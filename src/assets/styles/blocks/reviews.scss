@@ -3,18 +3,24 @@
   min-height: 650px;
   background-color: #f4f5f0;
   padding-bottom: $height-footer;
-  &__bg{
-    // background-image: url("assets/images/bg/reviews-bg.png");
-    // background-repeat: no-repeat;
-    // background-position: bottom;
+  &__bg {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
     min-width: 900px;
   }
-  &__container{
+  &__container {
     position: relative;
+    &::before {
+      content: "";
+      position: absolute;
+      top: 10%;
+      left: 5%;
+      background: svg-load('list2.svg') center center no-repeat;
+      width: 99px;
+      height: 91px;
+    }
   }
   &__title {
     color: $grey;
@@ -53,6 +59,16 @@
     &-text {
       color: $text-color;
       padding-bottom: 25px;
+      position: relative;
+      &::before {
+        content: "";
+        position: absolute;
+        top: -25px;
+        left: 0;
+        background: svg-load('quote.svg', fill="#93c42e") center center no-repeat;
+        width: 75px;
+        height: 61px;
+      }
     }
     &-title {
       color: $green;
@@ -68,7 +84,6 @@
     height: 481px;
     max-width: 380px;
     margin: 0 auto 70px;
-
     &-title {
       font-size: 35px;
       @include sansus();
@@ -78,7 +93,7 @@
       padding-bottom: 52px;
       @include underline(34, $text-color)
     }
-    &-row{
+    &-row {
       display: flex;
       flex-wrap: wrap;
       justify-content: center;
@@ -88,9 +103,8 @@
       }
     }
   }
-  &__scroll{
+  &__scroll {
     text-align: center;
     margin-bottom: 70px;
-
   }
 }

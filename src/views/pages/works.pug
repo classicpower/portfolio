@@ -45,6 +45,8 @@ block section_works
             +icon("arrow_down","slider__scroll-icon slider__scroll-icon--down")
 block section_reviews
   section#reviews.reviews.js-add-padding
+    .reviews__bg.js-reviews-bg
+      img(src="assets/images/bg/bg-min.png", alt="")
     .container.reviews__container
       .section__title
         +icon("about_header","section__title-img section__title-img--reviews")
@@ -56,7 +58,7 @@ block section_reviews
                 .reviews__content-image 
                   +image("dmitry.jpg", "Дмитрий Ковальчук", "reviews__content-image__pic")
                 .reviews__content-text
-                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 2 месяца только самых тяжелых испытаний и бессонных ночей!
+                  p Этот парень проходил обучение веб-разработке не где-то, а в LoftSchool! 5 недель только самых тяжелых испытаний и бессонных ночей!
                 h3.reviews__content-title Ковальчук Дмитрий
                 .reviews__content-subtitle — основатель Loftschool
             li.reviews__content-item
@@ -66,8 +68,6 @@ block section_reviews
                   p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
                 h3.reviews__content-title Владимир Сабанцев
                 .reviews__content-subtitle — преподаватель
-    .reviews__bg.js-reviews-bg
-      img(src="assets/images/bg/reviews-bg.png", alt="")
     .reviews__form.js-blur-wrapper
       .form__blur.js-blur
       .form__container
