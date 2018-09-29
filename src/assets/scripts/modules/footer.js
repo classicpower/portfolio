@@ -16,8 +16,8 @@ function heightForm() {
   addHeight.style.height = height + 'px';
   addMargin.style.marginTop = -height + 'px';
 }
-addPadding();
-heightForm();
 window.addEventListener('resize', addPadding);
+window.addEventListener('load', addPadding);
 window.addEventListener('resize', heightForm);
+window.addEventListener('load', heightForm);
 
