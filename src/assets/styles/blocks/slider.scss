@@ -68,12 +68,24 @@
       max-width: 80%;
       margin: 0 auto;
     }
+    &::after {
+      content: "";
+      background-color: rgba(176, 183, 170, 0.7);
+      position: absolute;
+      top: 0;
+      right: 0;
+      left: 0;
+      bottom: 0;
+    }
+    &:hover {
+      &::after {
+        content: "";
+        background-color: rgba(147, 153, 141, 0.7);
+      }
+    }
   }
   &__up {
     grid-area: up;
-    .slider__overlay {
-      background-color: rgba(176, 183, 170, 0.7);
-    }
     &:hover {
       .slider__scroll {
         top: 48%;
@@ -82,21 +94,11 @@
   }
   &__down {
     grid-area: down;
-    .slider__overlay {
-      background-color: rgba(147, 153, 141, 0.7);
-    }
     &:hover {
       .slider__scroll {
         top: 52%;
       }
     }
-  }
-  &__overlay {
-    position: absolute;
-    top: 0;
-    right: 0;
-    left: 0;
-    bottom: 0;
   }
   &__scroll {
     position: absolute;
@@ -104,6 +106,7 @@
     left: 50%;
     transform: translate(-50%, -50%);
     transition: top .3s;
+    z-index: 2;
     &-icon {
       width: 46px;
       height: 30px;
