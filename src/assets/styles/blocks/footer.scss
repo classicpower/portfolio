@@ -3,7 +3,7 @@
   bottom: 0;
   left: 0;
   right: 0;
-  @include tablets(){
+  @include tablets() {
     font-size: rem(14px);
   }
   &__copyright {
@@ -21,58 +21,63 @@
     width: calc(100% / 3 - 3%);
     padding: 30px 0 50px;
     position: relative;
-    @include desktop{
-      &:nth-child(2) {
-        &::after,
-        &::before {
-          content: "";
-          position: absolute;
-          background-color: #fff;
-          opacity: .2;
-          width: 2px;
-          height: 80px;
-          top: 30px;
-        }
-        &::after {
-          right: -12%;
-        }
-        &::before {
-          left: -12%;
-        }
-      }
-
-    }
-    @include tablets1100{
+    @include tablets1100 {
       width: calc(50% - 2%);
-      &:nth-child(2) {
-        &::after, &::before{
-          display: none;
-        }
-      }
-      &:last-child{
+      &:last-child {
         padding: 0 0 27px;
         width: 100%;
+      }
+    }
+    @include tablets600 {
+      width: 100%;
+      padding: 20px 0 17px;
+      &::after {
+        content: "";
+        position: absolute;
+        width: 95%;
+        height: 2px;
+        background-color: #fff;
+        opacity: .2;
+        bottom: 0;
+        left: 50%;
+        transform: translateX(-50%);
+      }
+      &:last-child {
+        padding: 20px 0 20px;
+        width: 100%;
+        &::after{
+          display: none;
+        }
       }
     }
   }
   &__desc {
     @include roboto('light');
     color: #fff;
+    @include tablets600 {
+      text-align: center;
+    }
   }
   &__menu {
     &-list {
       display: flex;
       margin: 0 -20px 30px;
       white-space: nowrap;
-      @include desktop{
+      @include desktop {
         justify-content: center;
       }
-      @include tablets1100{
+      @include tablets1100 {
         justify-content: flex-start;
+      }
+      @include tablets600 {
+        justify-content: center;
       }
     }
     &-item {
       padding: 0 3%;
+      @include tablets {
+        padding: 0 2%;
+      }
     }
     &-link {
       color: #fff;
@@ -82,10 +87,16 @@
   }
   &__social {
     display: flex;
+    @include tablets600 {
+      justify-content: center;
+    }
   }
   &__quote {
     opacity: .5;
     color: #fff;
+    @include mini {
+      text-align: center;
+    }
     &-desc {
       @include roboto('lightItalic');
       padding-bottom: 7px;

@@ -102,6 +102,13 @@
     height: 481px;
     margin: 0 auto 70px;
     max-width: 380px;
+    @include tablets {
+      margin: 0 auto 40px;
+      max-width: 350px;
+    }
+    @include mini {
+      padding: 0 10px;
+    }
     &-row {
       display: flex;
       flex-wrap: wrap;
