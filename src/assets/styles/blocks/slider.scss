@@ -3,6 +3,11 @@
   grid-template-rows: 1fr 35% 35%;
   grid-template-columns: 1fr 25% 25%;
   grid-template-areas: "desc main main" "desc main main" "desc up down";
+  @include tablets() {
+    grid-template-rows: 1fr;
+    grid-template-columns: 1fr 1fr;
+    grid-template-areas: "main main" "desc desc" "up down";
+  }
   &__desc {
     grid-area: desc;
     background-color: #ebefe2;
@@ -16,29 +21,29 @@
     }
     &-content {
       text-align: center;
+      margin: 42px 0 60px;
     }
     &-title {
-      @include sansus();
-      color: $text-color;
-      font-size: 35px;
-      text-transform: uppercase;
-      position: relative;
-      padding-bottom: 52px;
-      @include underline(34, $text-color)
     }
     &-subtitle {
       @include roboto("medium");
       color: $green;
       text-transform: uppercase;
-      padding-bottom: 58px;
+      padding-bottom: rem(58px);
+      @include tablets(){
+        padding-bottom: rem(38px);
+      }
     }
     &-link {
       @include btn(#fff, $light-green, $green);
       border-radius: 25px;
       border: none;
-      padding: 16px 21px 15px 49px;
+      padding: 12px 21px 11px 49px;
       position: relative;
       text-decoration: none;
+      width: 201px;
+      margin: 0 auto;
+      display: block;
     }
     &-icon {
       fill: #fff;

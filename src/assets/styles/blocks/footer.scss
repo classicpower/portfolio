@@ -1,9 +1,11 @@
 .footer {
-  min-height: $height-footer;
   position: absolute;
   bottom: 0;
   left: 0;
   right: 0;
+  @include tablets(){
+    font-size: rem(14px);
+  }
   &__copyright {
     background-color: rgba($green, .85);
   }
@@ -11,12 +13,47 @@
     background-color: rgba($grey, .85);
     width: 100%;
     display: flex;
-    padding: 0 30px;
+    flex-wrap: wrap;
+    padding: 0 2%;
     justify-content: space-between;
   }
   &__item {
-    width: calc(100% / 3 - 120px);
+    width: calc(100% / 3 - 3%);
     padding: 30px 0 50px;
+    position: relative;
+    @include desktop{
+      &:nth-child(2) {
+        &::after,
+        &::before {
+          content: "";
+          position: absolute;
+          background-color: #fff;
+          opacity: .2;
+          width: 2px;
+          height: 80px;
+          top: 30px;
+        }
+        &::after {
+          right: -12%;
+        }
+        &::before {
+          left: -12%;
+        }
+      }
+
+    }
+    @include tablets1100{
+      width: calc(50% - 2%);
+      &:nth-child(2) {
+        &::after, &::before{
+          display: none;
+        }
+      }
+      &:last-child{
+        padding: 0 0 27px;
+        width: 100%;
+      }
+    }
   }
   &__desc {
     @include roboto('light');
@@ -26,9 +63,16 @@
     &-list {
       display: flex;
       margin: 0 -20px 30px;
+      white-space: nowrap;
+      @include desktop{
+        justify-content: center;
+      }
+      @include tablets1100{
+        justify-content: flex-start;
+      }
     }
     &-item {
-      padding: 0 20px;
+      padding: 0 3%;
     }
     &-link {
       color: #fff;

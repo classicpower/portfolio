@@ -12,33 +12,46 @@
   justify-content: center;
   align-items: center;
   transition: .9s;
-  &--open{
+  &--open {
     left: 0;
   }
   &__item {
-    padding-bottom: 80px;
+    padding-bottom: rem(80px);
     text-align: center;
     position: relative;
     transition: .5s;
-    &--active, &:hover{
+    &--active,
+    &:hover {
       &::after {
         content: "";
-        width: 90px;
-        height: 3px;
+        width: rem(90px);
+        height: rem(3px);
         position: absolute;
         bottom: 0;
         left: 50%;
         transform: translateX(-50%);
-        margin-bottom: 50px;
+        margin-bottom: rem(50px);
         background-color: #fff;
+      }
+    }
+    @include tablets1100 {
+      padding-bottom: rem(100px);
+      &--active,
+      &:hover {
+        &::after {
+          margin-bottom: rem(80px);
+        }
       }
     }
   }
   &__link {
     @include sansus();
-    font-size: 63px;
+    font-size: rem(63px);
     text-transform: uppercase;
     color: #fff;
     text-decoration: none;
+    @include tablets1100 {
+      font-size: rem(49px);
+    }
   }
 }

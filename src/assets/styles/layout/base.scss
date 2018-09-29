@@ -1,12 +1,15 @@
 html {
-  @include tablets() {
+  @include desktop() {
     font-size: 16px;
   }
-  @include mobile() {
+  @include tablets() {
     font-size: 15px;
   }
-  @include mini() {
+  @include mobile() {
     font-size: 14px;
+  }
+  @include mini() {
+    font-size: 13px;
   }
 }
 
@@ -33,6 +36,7 @@ body {
 .container {
   max-width: 1200px;
   margin: 0 auto;
+  padding: 0 3%;
   z-index: 1;
 }
 
@@ -71,10 +75,16 @@ body {
       &--reviews {
         height: rem(165px);
         fill: #93c42e;
+        @include tablets(){
+          height: rem(140px);
+        }
       }
       &--header {
-        height: (310px);
+        height: rem(310px);
         fill: #fff;
+        @include tablets(){
+          height: rem(197px);
+        }
       }
     }
   }
@@ -87,6 +97,14 @@ body {
   right: 0;
   height: 200px;
   display: flex;
+  @include tablets{
+    top: -100px;
+    height: 100px;
+  }
+  @include mobile{
+    top: -50px;
+    height: 50px;
+  }
   &-left,
   &-right {
     width: 50%;
@@ -108,7 +126,17 @@ body {
   text-transform: uppercase;
   position: relative;
   padding: rem(70px) 0;
-  @include underline(60, $grey)
+  @include underline(60, $grey);
+  @include tablets{
+    font-size: rem(48px);
+    padding: rem(51px) 0;
+    @include underline(41, $grey)
+  }
+  @include mobile{
+    font-size: rem(35px);
+    padding: rem(40px) 0;
+    @include underline(31, $grey)
+  }
 }
 
 .subtitle {

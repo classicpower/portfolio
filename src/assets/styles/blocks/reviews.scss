@@ -1,56 +1,54 @@
 .reviews {
   position: relative;
-  min-height: 650px;
+  min-height: rem(650px);
   background-color: #f4f5f0;
-  padding-bottom: $height-footer;
   &__bg {
     position: absolute;
     left: 0;
     right: 0;
     bottom: 0;
-    min-width: 900px;
+    min-width: rem(900px);
   }
   &__container {
     position: relative;
   }
   &__icon {
     position: absolute;
+    @include tablets() {
+      display: none;
+    }
     &--list1 {
       bottom: 0;
       left: 15%;
-      width: 58px;
-      height: 108px;
+      width: rem(58px);
+      height: rem(108px);
     }
     &--list2 {
       top: 10%;
       left: 5%;
-      width: 99px;
-      height: 91px;
+      width: rem(99px);
+      height: rem(91px);
     }
     &--list3 {
       bottom: 0;
       right: 0;
-      width: 141px;
-      height: 120px;
+      width: rem(141px);
+      height: rem(120px);
     }
   }
-  &__title {
-    color: $grey;
-    @include sansus();
-    font-size: 63px;
-    text-transform: uppercase;
-    position: relative;
-    padding: 52px 0;
-    @include underline(34, $grey)
-  }
   &__content {
-    padding-bottom: 70px;
+    padding-bottom: rem(30px);
+    @include tablets() {
+      padding-bottom: rem(9px);
+    }
     &-wrap {
       max-width: 780px;
       margin: 0 auto;
-    }
-    &-list {
       display: flex;
+      flex-wrap: wrap;
+      @include mobile {
+        justify-content: center;
+      }
     }
     &-item {
       width: 50%;
@@ -58,10 +56,18 @@
       flex-direction: column;
       align-items: center;
       @include roboto("italic");
-      padding-right: 20px;
+      padding-right: rem(20px);
+      padding-bottom: rem(40px);
+      @include tablets() {
+        padding-right: rem(30px);
+      }
+      @include mobile {
+        width: 100%;
+        padding-right: 0;
+      }
     }
     &-image {
-      padding-bottom: 20px;
+      padding-bottom: rem(20px);
       &__pic {
         border-radius: 50%;
         clip-path: circle(50% 50%);
@@ -70,16 +76,16 @@
     }
     &-text {
       color: $text-color;
-      padding-bottom: 25px;
+      padding-bottom: rem(25px);
       position: relative;
       &::before {
         content: "";
         position: absolute;
-        top: -25px;
+        top: rem(-25px);
         left: 0;
         background: svg-load('quote.svg', fill="#93c42e") center center no-repeat;
-        width: 75px;
-        height: 61px;
+        width: rem(75px);
+        height: rem(61px);
       }
     }
     &-title {
@@ -94,17 +100,8 @@
     position: relative;
     overflow: hidden;
     height: 481px;
-    max-width: 380px;
     margin: 0 auto 70px;
-    &-title {
-      font-size: 35px;
-      @include sansus();
-      text-transform: uppercase;
-      text-align: center;
-      position: relative;
-      padding-bottom: 52px;
-      @include underline(34, $text-color)
-    }
+    max-width: 380px;
     &-row {
       display: flex;
       flex-wrap: wrap;
@@ -117,6 +114,9 @@
   }
   &__scroll {
     text-align: center;
-    margin-bottom: 70px;
+    margin-bottom: rem(70px);
+    @include tablets() {
+      margin-bottom: rem(50px);
+    }
   }
 }
