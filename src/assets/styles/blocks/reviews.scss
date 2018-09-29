@@ -12,14 +12,26 @@
   }
   &__container {
     position: relative;
-    &::before {
-      content: "";
-      position: absolute;
+  }
+  &__icon {
+    position: absolute;
+    &--list1 {
+      bottom: 0;
+      left: 15%;
+      width: 58px;
+      height: 108px;
+    }
+    &--list2 {
       top: 10%;
       left: 5%;
-      background: svg-load('list2.svg') center center no-repeat;
       width: 99px;
       height: 91px;
+    }
+    &--list3 {
+      bottom: 0;
+      right: 0;
+      width: 141px;
+      height: 120px;
     }
   }
   &__title {

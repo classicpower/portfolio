@@ -46,8 +46,11 @@ block section_works
 block section_reviews
   section#reviews.reviews.js-add-padding
     .reviews__bg.js-reviews-bg
-      img(src="assets/images/bg/bg-min.png", alt="")
+      img(src="assets/images/bg/reviews-bg.png", alt="")
     .container.reviews__container
+      +icon("list1","reviews__icon reviews__icon--list1")
+      +icon("list2","reviews__icon reviews__icon--list2")
+      +icon("list3","reviews__icon reviews__icon--list3")
       .section__title
         +icon("about_header","section__title-img section__title-img--reviews")
         h2.reviews__title.title Что обо мне говорят
