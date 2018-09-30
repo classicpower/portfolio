@@ -19,6 +19,13 @@
     top: 24px;
     right: 158px;
     z-index: 1;
+    @include desktop {
+      right: 20px;
+    }
+    @include mobile {
+      right: 50%;
+      transform: translateX(50%);
+    }
     &-btn {
       @include btn(#fff,
       transparent,
@@ -38,7 +45,7 @@
     transform-style: preserve-3d;
     perspective: 1200;
   }
-  &__flipper{
+  &__flipper {
     position: relative;
     display: flex;
     align-items: center;
@@ -48,16 +55,20 @@
     transform-style: preserve-3d;
     transition: .7s linear;
   }
-  &__front, &__back  {
+  &__front,
+  &__back {
     max-width: 380px;
     position: absolute;
     backface-visibility: hidden;
+    @include mobile{
+      padding: 0 20px;
+    }
   }
-  &__front{
+  &__front {
     z-index: 2;
     transform: rotateY(0deg);
-    &-content{
-      background-color: rgba(#122620, .6);    
+    &-content {
+      background-color: rgba(#122620, .6);
       padding: 40px 0;
     }
   }
