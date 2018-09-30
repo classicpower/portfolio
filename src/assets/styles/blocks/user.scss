@@ -51,6 +51,9 @@
   }
   &__desc {
     text-align: left;
+    @include tablets1000{
+      text-align: center
+    }
     p {
       padding-bottom: 10px;
     }

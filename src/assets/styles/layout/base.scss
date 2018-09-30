@@ -49,6 +49,7 @@ body {
 
 .section {
   min-height: 650px;
+  max-height: 1000px;
   height: 100vh;
   position: relative;
   &__title {

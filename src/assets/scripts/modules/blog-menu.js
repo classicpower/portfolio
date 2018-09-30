@@ -2,11 +2,8 @@ const asideBtn = document.querySelector('.js-aside-btn');
 const aside = document.querySelector('.js-aside');
 
 function asideWidth() {
-
     let asideWidth = aside.clientWidth;
     aside.style.left = -asideWidth + 'px';
-
-
 }
 function openMenu() {
   if (!asideBtn.classList.contains('js-aside-open')) {

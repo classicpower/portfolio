@@ -1,10 +1,14 @@
 .about {
-  &__triangle{
-    &-left{
+  position: relative;
+  &__triangle {
+    &-left {
       background-color: #ebefe2;
     }
-    &-right{
+    &-right {
       background-color: #f4f5f0;
+      @include tablets1000 {
+        background-color: #ebefe2;
+      }
     }
   }
   &__container {
@@ -16,7 +20,7 @@
     width: 50%;
     padding: rem(20px) rem(20px) 0;
     background-color: #ebefe2;
-    @include tablets{
+    @include tablets1000 {
       width: 100%;
     }
     &--color_cream {
@@ -25,11 +29,12 @@
     &-wrap {
       display: flex;
       flex-wrap: wrap;
+      margin: 0 rem(-20px);
     }
     &-side {
       width: 50%;
       padding: 0 rem(20px);
-      @include desktop{
+      @include desktop {
         width: 100%;
       }
       &--full {
@@ -40,7 +45,7 @@
   &__info {
     height: 100%;
   }
-  &__user{
+  &__user {
     padding-bottom: rem(56px);
   }
 }
