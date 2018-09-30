@@ -21,9 +21,10 @@
     }
     &-content {
       text-align: center;
-      margin: 42px 0 60px;
-    }
-    &-title {
+      margin: 42px 10px 60px;
+      @include mobile{
+        margin: 30px 10px;
+      }
     }
     &-subtitle {
       @include roboto("medium");
