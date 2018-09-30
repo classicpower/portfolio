@@ -20,6 +20,14 @@ const blur = (function () {
   }
 }());
 
+function heightForm() {
+  const form = document.getElementById('form');
+  const addHeight = document.querySelector('.js-add-height');
+  const addMargin = document.querySelector('.js-add-margin');
+  let height = form.clientHeight;
+  addHeight.style.height = height + 'px';
+  addMargin.style.marginTop = -height + 'px';
+}
 
 
 window.onresize = function() {
@@ -29,14 +37,4 @@ window.onresize = function() {
 window.onload = function() {
   blur.set();
   heightForm()
-}
-
-
-function heightForm() {
-  const form = document.getElementById('form');
-  const addHeight = document.querySelector('.js-add-height');
-  const addMargin = document.querySelector('.js-add-margin');
-  let height = form.clientHeight;
-  addHeight.style.height = height + 'px';
-  addMargin.style.marginTop = -height + 'px';
 }

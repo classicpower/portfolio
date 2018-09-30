@@ -5,6 +5,10 @@
     display: flex;
     justify-content: center;
     padding: 70px 10px;
+    position: relative;
+    @include tablets {
+      padding: 50px 24px;
+    }
   }
   &__triangle {
     &-left,
@@ -28,13 +32,44 @@
     flex-basis: 20%;
     text-align: right;
     margin-right: 7%;
-    @include desktop{
+    transition: .3s;
+    @include desktop {
       max-width: 300px;
       margin-right: 10%;
     }
+    @include tablets {
+      position: fixed;
+      top: 0;
+      left: -300px;
+      bottom: 0;
+      width: 300px;
+      background-color: $green;
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+      z-index: 20;
+      box-shadow: 4px 0 4px rgba(#000, .2);
+      margin-right: 0;
+    }
+    &-button{
+      @include offBtnStyle;
+      background-color: $green;
+      position: absolute;
+      top: 50%;
+      right: -20px;
+      transform: translateY(-50%);
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      box-shadow: 4px 0 4px rgba(#000, .2);
+      cursor: pointer;
+      z-index: 10;
+    }
   }
   &-menu {
-    &__list {}
+    &__list {
+      padding-right: 20px;
+    }
     &__item {
       position: relative;
       &--active,
@@ -48,10 +83,22 @@
           position: absolute;
           top: 0;
         }
-        .blog__link {
-          transition: .5s;
+        .blog-menu__link {
+          transition: .3s;
           @include roboto("bold");
           color: $light-green;
+          @include tablets {
+            color: #fff;
+            opacity: 1;
+          }
+        }
+      }
+      @include tablets {
+        &--active,
+        &:hover {
+          &::after {
+            display: none;
+          }
         }
       }
     }
@@ -60,13 +107,21 @@
       text-decoration: none;
       display: block;
       padding: 15px 0 14px;
+      @include tablets {
+        color: #fff;
+        opacity: .7;
+      }
     }
   }
   &__content {
     flex-basis: 70%;
     max-width: 880px;
-    @include desktop{
+    @include desktop {
       max-width: 680px;
+    }
+    @include tablets{
+      flex-basis: 100%;
+      max-width: 100%;
     }
   }
 }
