@@ -9,6 +9,9 @@
     @include tablets {
       padding: 50px 24px;
     }
+    @include mobile {
+      padding: 35px 15px;
+    }
   }
   &__triangle {
     &-left,
@@ -51,7 +54,11 @@
       box-shadow: 4px 0 4px rgba(#000, .2);
       margin-right: 0;
     }
-    &-button{
+    @include mobile {
+      width: 280px;
+    }
+    &-button {
+      display: none;
       @include offBtnStyle;
       background-color: $green;
       position: absolute;
@@ -63,7 +70,12 @@
       border-radius: 50%;
       box-shadow: 4px 0 4px rgba(#000, .2);
       cursor: pointer;
+      justify-content: flex-end;
+      align-items: center;
       z-index: 10;
+      @include tablets{
+        display: flex;
+      }
     }
   }
   &-menu {
@@ -119,7 +131,7 @@
     @include desktop {
       max-width: 680px;
     }
-    @include tablets{
+    @include tablets {
       flex-basis: 100%;
       max-width: 100%;
     }
