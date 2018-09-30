@@ -97,6 +97,10 @@ body {
   right: 0;
   height: 200px;
   display: flex;
+  @include tablets1100{
+    top: -140px;
+    height: 140px;
+  }
   @include tablets{
     top: -100px;
     height: 100px;
