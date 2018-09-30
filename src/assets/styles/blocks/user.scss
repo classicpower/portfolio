@@ -8,14 +8,13 @@
     padding: 40px 0;
     max-width: 380px;
     margin: 0 auto;
-
   }
   &__image {
     margin-bottom: 20px;
     width: 100%;
     display: flex;
     justify-content: center;
-    &--blog{
+    &--blog {
       margin-bottom: 0;
     }
     &-pic {
@@ -24,7 +23,7 @@
       clip-path: circle(50% at 50% 50%);
       object-fit: cover;
     }
-    &-full{
+    &-full {
       object-fit: cover;
     }
   }
@@ -39,10 +38,10 @@
     font-size: 35px;
     color: #fff;
     padding-bottom: 9px;
-    @include tablets{
+    @include tablets {
       font-size: 28px;
     }
-    @include mobile{
+    @include mobile {
       font-size: 21px;
     }
   }
@@ -50,23 +49,27 @@
     font-size: 16px;
     color: rgba(#fff, .8);
   }
-  &__desc{
+  &__desc {
     text-align: left;
-    p{
+    p {
       padding-bottom: 10px;
     }
   }
-  &-data{
+  &-data {
     background-color: rgba(#f4f5f0, .85);
     max-width: 380px;
     z-index: 2;
+    padding: 35px 0 30px;
   }
-  &-contacts{
-    &__list{
+  &-contacts {
+    &__list {
       padding: 0 40px;
     }
-    &__item{
+    &__item {
       margin-bottom: 25px;
+      &:last-child {
+        margin-bottom: 0;
+      }
     }
   }
 }
