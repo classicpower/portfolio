@@ -2,10 +2,10 @@ html {
   @include desktop() {
     font-size: 16px;
   }
-  @include tablets() {
+  @include tablets1100() {
     font-size: 15px;
   }
-  @include mobile() {
+  @include tablets() {
     font-size: 14px;
   }
   @include mini() {
