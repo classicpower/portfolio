@@ -19,8 +19,10 @@ const blur = (function () {
     }
   }
 }());
-blur.set();
 window.onresize = function() {
+  blur.set();
+}
+window.onload = function() {
   blur.set();
 }
 
