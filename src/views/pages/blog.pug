@@ -18,22 +18,22 @@ block user
         h1.blog__title.title Блог
       .blog__desc Статьи, которые я написал
 block section_blog
-  section.blog.js-add-padding
+  .blog.js-add-padding
     .blog__triangle.triangle
       .blog__triangle-left.triangle-left
       .blog__triangle-right.triangle-right
     .blog__container
-      nav.blog__menu
-        ul.blog__list
-          li.blog__item.blog__item--active
-            a.blog__link(href="#") Самое важное в SASS
-          li.blog__item.blog__item 
-            a.blog__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
-          li.blog__item.blog__item
-            a.blog__link(href="#") Самый необходимый набор Gulp плагинов
-          li.blog__item.blog__item
-            a.blog__link(href="#") Почему я выбрал Jade
-      .blog__content
+      aside.aside.blog__aside
+        ul.blog-menu__list
+          li.blog-menu__item.blog-menu__item--active
+            a.blog-menu__link(href="#") Самое важное в SASS
+          li.blog-menu__item.blog-menu__item 
+            a.blog-menu__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
+          li.blog-menu__item.blog-menu__item
+            a.blog-menu__link(href="#") Самый необходимый набор Gulp плагинов
+          li.blog-menu__item.blog-menu__item
+            a.blog-menu__link(href="#") Почему я выбрал Jade
+      section.blog__content
         article.post
           header.post__header
             hgroup

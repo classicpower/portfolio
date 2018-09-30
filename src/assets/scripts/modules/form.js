@@ -19,10 +19,24 @@ const blur = (function () {
     }
   }
 }());
+
+
+
 window.onresize = function() {
   blur.set();
+  heightForm()
 }
 window.onload = function() {
   blur.set();
+  heightForm()
 }
 
+
+function heightForm() {
+  const form = document.getElementById('form');
+  const addHeight = document.querySelector('.js-add-height');
+  const addMargin = document.querySelector('.js-add-margin');
+  let height = form.clientHeight;
+  addHeight.style.height = height + 'px';
+  addMargin.style.marginTop = -height + 'px';
+}
