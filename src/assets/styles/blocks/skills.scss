@@ -86,6 +86,7 @@
   }
   &__title {
     @include roboto("medium");
+    color: $green;
     font-size: rem(13px);
     text-align: center;
     text-transform: uppercase;
