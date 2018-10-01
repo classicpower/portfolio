@@ -32,6 +32,7 @@
         transform: translateX(-50%);
         margin-bottom: rem(50px);
         background-color: #fff;
+        transition: .5s;
       }
     }
     @include tablets1100 {

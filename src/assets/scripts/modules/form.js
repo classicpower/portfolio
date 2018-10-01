@@ -10,7 +10,7 @@ const blur = (function () {
       const sectionHeight = document.querySelector('.reviews').offsetHeight;
       const differenceHeight = sectionHeight - bgHeight;
       const posLeft = -container.offsetLeft;
-      const posTop = - container.offsetTop + differenceHeight;
+      const posTop = -container.offsetTop + differenceHeight;
       const blurCSS = formBlur.style;
 
       blurCSS.backgroundPosition = posLeft + 'px' + ' ' + posTop + 'px';
