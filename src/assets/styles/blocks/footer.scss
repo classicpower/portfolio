@@ -90,6 +90,10 @@
       color: #fff;
       text-decoration: none;
       @include roboto('bold');
+      transition: .5s;
+      &:hover{
+        color: $green;
+      }
     }
   }
   &__social {
