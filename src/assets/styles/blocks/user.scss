@@ -5,12 +5,12 @@
   z-index: 2;
   position: relative;
   &__wrap {
-    padding: 40px 0;
-    max-width: 380px;
+    padding: rem(40px) 0;
+    max-width: rem(380px);
     margin: 0 auto;
   }
   &__image {
-    margin-bottom: 20px;
+    margin-bottom: rem(20px);
     width: 100%;
     display: flex;
     justify-content: center;
@@ -18,8 +18,8 @@
       margin-bottom: 0;
     }
     &-pic {
-      width: 147px;
-      height: 147px;
+      width: rem(147px);
+      height: rem(147px);
       clip-path: circle(50% at 50% 50%);
       object-fit: cover;
     }
@@ -30,46 +30,52 @@
   &__info {
     display: flex;
     flex-direction: column;
-    margin-bottom: 35px;
+    margin-bottom: rem(35px);
     text-align: center;
+    @include tablets1000 {
+      margin-bottom: 0;
+    }
   }
   &__title {
     @include roboto('medium');
-    font-size: 35px;
+    font-size: rem(35px);
     color: #fff;
-    padding-bottom: 9px;
+    padding-bottom: rem(9px);
     @include tablets {
-      font-size: 28px;
+      font-size: rem(28px);
     }
     @include mobile {
-      font-size: 21px;
+      font-size: rem(21px);
     }
   }
   &__subtitle {
-    font-size: 16px;
+    font-size: rem(16px);
     color: rgba(#fff, .8);
   }
   &__desc {
     text-align: left;
-    @include tablets1000{
+    @include tablets1000 {
       text-align: center
     }
     p {
-      padding-bottom: 10px;
+      padding-bottom: rem(10px);
     }
   }
   &-data {
     background-color: rgba(#f4f5f0, .85);
-    max-width: 380px;
+    max-width: rem(380px);
     z-index: 2;
-    padding: 35px 0 30px;
+    padding: rem(35px) 0 rem(30px);
+    @include mini{
+      width: 100%;
+    }
   }
   &-contacts {
     &__list {
-      padding: 0 40px;
+      padding: 0 rem(40px);
     }
     &__item {
-      margin-bottom: 25px;
+      margin-bottom: rem(25px);
       &:last-child {
         margin-bottom: 0;
       }

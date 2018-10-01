@@ -47,5 +47,11 @@
   }
   &__user {
     padding-bottom: rem(56px);
+    @include tablets1000{
+      padding-bottom: rem(40px);
+    }
+    @include mobile{
+      padding-bottom: rem(30px);
+    }
   }
 }

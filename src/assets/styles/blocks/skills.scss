@@ -1,5 +1,5 @@
 .skills {
-  @include tablets1100{
+  @include tablets1100 {
     text-align: center;
   }
   &__list {
@@ -9,29 +9,50 @@
   }
   &__item {
     width: 100%;
-    margin-bottom: 40px;
+    margin-bottom: rem(40px);
+    @include mobile {
+      margin-bottom: rem(20px);
+    }
   }
   &__row {
     &-list {
       display: flex;
       margin: 0 -3%;
+      width: 100%;
       @include desktop {
         margin: 0 -1%;
       }
-      @include tablets1100 {
-        justify-content: center
+      @include tablets1000 {
+        justify-content: center;
+        margin: 0;
+      }
+      @include mobile {
+        flex-wrap: wrap;
       }
     }
     &-item {
       padding: 0 3%;
+      transition: .5s;
       @include desktop {
         padding: 0 1%;
+      }
+      @include tablets1000 {
+        padding: 0 3%;
+      }
+      @include tablets600 {
+        padding: 0 2%;
+      }
+      @include mobile {
+        width: 50%;
+        display: flex;
+        justify-content: center;
+        margin-bottom: rem(20px);
       }
     }
     &-title {
       @include roboto("medium");
-      font-size: 28px;
-      padding-bottom: 20px;
+      font-size: rem(28px);
+      padding-bottom: rem(20px);
     }
   }
 }
@@ -39,18 +60,18 @@
 .skill {
   display: block;
   position: relative;
-  width: 120px;
-  height: 120px;
+  width: rem(120px);
+  height: rem(120px);
   margin: 0;
   @include desktop {
-    width: 110px;
-    height: 110px;
+    width: rem(110px);
+    height: rem(110px);
   }
   &__figure {
     transform: rotate(-90deg);
     @include desktop {
-      width: 110px;
-      height: 110px;
+      width: rem(110px);
+      height: rem(110px);
     }
   }
   &__circle {
@@ -65,12 +86,15 @@
   }
   &__title {
     @include roboto("medium");
-    font-size: 13px;
+    font-size: rem(13px);
     text-align: center;
     text-transform: uppercase;
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
+    @include tablets1100 {
+      font-size: rem(12px);
+    }
   }
 }

@@ -8,6 +8,9 @@
     justify-content: center;
     align-items: center;
     height: 100%;
+    @include mini{
+      align-items: flex-start;
+    }
   }
   &-cell {
     display: flex;
