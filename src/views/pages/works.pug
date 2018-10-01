@@ -6,9 +6,9 @@ block variables
 block scripts
   script(src='works.bundle.js')
 
-block header_title
-  .header__title
-    +icon("portfolio_header","section__title-img section__title-img--header")
+block header_image
+  .header__image
+    +icon("portfolio_header","header__image-icon section__image-icon")
 block header_scroll  
   .header__scroll
     +scroll("down", "normal")
@@ -20,8 +20,8 @@ block section_works
     .works__triangle.triangle
       .works__triangle-left.triangle-left
       .works__triangle-right.triangle-right
-    .section__title
-      +icon("works_header","section__title-img section__title-img--works")
+    .works__image.section__image
+      +icon("works_header","works__image-icon section__image-icon")
       h2.works__title.title Мои работы
     .works__slider
       .slider.js-slider
@@ -46,13 +46,13 @@ block section_works
 block section_reviews
   section#reviews.reviews.js-add-padding
     .reviews__bg.js-reviews-bg
-      img(src="assets/images/bg/reviews-bg.png", alt="")
+      img.reviews__bg-img(src="assets/images/bg/reviews-bg.png", alt="Фон для отзывов")
     .container.reviews__container
       +icon("list1","reviews__icon reviews__icon--list1")
       +icon("list2","reviews__icon reviews__icon--list2")
       +icon("list3","reviews__icon reviews__icon--list3")
-      .section__title
-        +icon("about_header","section__title-img section__title-img--reviews")
+      .reviews__image.section__image
+        +icon("about_header","reviews__image-icon section__image-icon")
         h2.reviews__title.title Что обо мне говорят
       .reviews__content
         .reviews__content-wrap
@@ -76,11 +76,11 @@ block section_reviews
         form#form.form.form__reviews.form--bg_color(action="")
           h2.form__subtitle.subtitle Связаться со мной
           .form__row.form__row--reviews
-            input.form__input.form__input--reviews(type="text" name="name" placeholder="Имя")
+            input.form__input.form__input--reviews(aria-label="Введите имя" type="text" name="name" placeholder="Имя")
           .form__row.form__row--reviews
-            input.form__input.form__input--reviews(type="text" name="email" placeholder="Email")
+            input.form__input.form__input--reviews(aria-label="Введите email" type="text" name="email" placeholder="Email")
           .form__row.form__row--reviews
-            textarea.form__textarea(name="message" placeholder="Ваше сообщение")
+            textarea.form__textarea(aria-label="Введите сообщение" name="message" placeholder="Ваше сообщение")
           .form__row.form__row--reviews
             .form__list
               input.form__submit(type="submit" value="Отправить")

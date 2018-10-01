@@ -39,8 +39,8 @@
 					<button class="hamburger" type="button"> <span class="hamburger__bar"></span></button>
 				</div>
 				<div class="header__content">
-					<div class="header__title">
-						<svg class="section__title-img section__title-img--header">
+					<div class="header__image">
+						<svg class="header__image-icon section__image-icon">
 							<use xlink:href="assets/images/icons/sprite.svg#portfolio_header"></use>
 						</svg>
 					</div>
@@ -71,8 +71,8 @@
 						<div class="works__triangle-left triangle-left"></div>
 						<div class="works__triangle-right triangle-right"></div>
 					</div>
-					<div class="section__title">
-						<svg class="section__title-img section__title-img--works">
+					<div class="works__image section__image">
+						<svg class="works__image-icon section__image-icon">
 							<use xlink:href="assets/images/icons/sprite.svg#works_header"></use>
 						</svg>
 						<h2 class="works__title title">Мои работы</h2>
@@ -110,7 +110,7 @@
 					</div>
 				</section>
 				<section class="reviews js-add-padding" id="reviews">
-					<div class="reviews__bg js-reviews-bg"><img src="assets/images/bg/reviews-bg.png" alt=""></div>
+					<div class="reviews__bg js-reviews-bg"><img class="reviews__bg-img" src="assets/images/bg/reviews-bg.png" alt="Фон для отзывов"></div>
 					<div class="container reviews__container">
 						<svg class="reviews__icon reviews__icon--list1">
 							<use xlink:href="assets/images/icons/sprite.svg#list1"></use>
@@ -121,8 +121,8 @@
 						<svg class="reviews__icon reviews__icon--list3">
 							<use xlink:href="assets/images/icons/sprite.svg#list3"></use>
 						</svg>
-						<div class="section__title">
-							<svg class="section__title-img section__title-img--reviews">
+						<div class="reviews__image section__image">
+							<svg class="reviews__image-icon section__image-icon">
 								<use xlink:href="assets/images/icons/sprite.svg#about_header"></use>
 							</svg>
 							<h2 class="reviews__title title">Что обо мне говорят</h2>
@@ -156,13 +156,13 @@
 							<form class="form form__reviews form--bg_color" id="form" action="">
 								<h2 class="form__subtitle subtitle">Связаться со мной</h2>
 								<div class="form__row form__row--reviews">
-									<input class="form__input form__input--reviews" type="text" name="name" placeholder="Имя">
+									<input class="form__input form__input--reviews" aria-label="Введите имя" type="text" name="name" placeholder="Имя">
 								</div>
 								<div class="form__row form__row--reviews">
-									<input class="form__input form__input--reviews" type="text" name="email" placeholder="Email">
+									<input class="form__input form__input--reviews" aria-label="Введите email" type="text" name="email" placeholder="Email">
 								</div>
 								<div class="form__row form__row--reviews">
-									<textarea class="form__textarea" name="message" placeholder="Ваше сообщение"></textarea>
+									<textarea class="form__textarea" aria-label="Введите сообщение" name="message" placeholder="Ваше сообщение"></textarea>
 								</div>
 								<div class="form__row form__row--reviews">
 									<div class="form__list">

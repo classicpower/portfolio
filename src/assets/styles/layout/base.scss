@@ -52,33 +52,18 @@ body {
   max-height: 1000px;
   height: 100vh;
   position: relative;
-  &__title {
+  &__image {
     display: flex;
     justify-content: center;
     position: relative;
     width: 100%;
-    &-img {
+    &-icon {
       width: 100%;
       position: absolute;
       top: 50%;
       left: 50%;
       transform: translate(-50%, -50%);
       opacity: .1;
-      &--works,
-      &--reviews {
-        height: rem(165px);
-        fill: #93c42e;
-        @include tablets(){
-          height: rem(140px);
-        }
-      }
-      &--header {
-        height: rem(310px);
-        fill: #fff;
-        @include tablets(){
-          height: rem(197px);
-        }
-      }
     }
   }
 }

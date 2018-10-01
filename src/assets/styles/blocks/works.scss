@@ -1,4 +1,13 @@
 .works {
   background-color: #f8f9f5;
   position: relative;
+  &__image {
+    &-icon {
+      height: rem(165px);
+      fill: #93c42e;
+      @include tablets() {
+        height: rem(140px);
+      }
+    }
+  }
 }

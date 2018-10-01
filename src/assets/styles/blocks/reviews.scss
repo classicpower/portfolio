@@ -8,9 +8,21 @@
     right: 0;
     bottom: 0;
     min-width: rem(900px);
+    &-img{
+      width: 100%;
+    }
   }
   &__container {
     position: relative;
+  }
+  &__image {
+    &-icon {
+      height: rem(165px);
+      fill: #93c42e;
+      @include tablets() {
+        height: rem(140px);
+      }
+    }
   }
   &__icon {
     position: absolute;
