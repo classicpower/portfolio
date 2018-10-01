@@ -22,3 +22,8 @@ window.onresize = function () {
   asideWidth();
   asideBtn.classList.remove('js-aside-open');
 };
+window.onload = function () {
+  asideWidth();
+  asideBtn.classList.remove('js-aside-open');
+};
+
