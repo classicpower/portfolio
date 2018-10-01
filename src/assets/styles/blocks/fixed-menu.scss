@@ -44,6 +44,15 @@
         }
       }
     }
+    @include mobile {
+      padding-bottom: rem(50px);
+      &--active,
+      &:hover {
+        &::after {
+          margin-bottom: rem(30px);
+        }
+      }
+    }
   }
   &__link {
     @include sansus();
