@@ -9,6 +9,11 @@
     max-width: rem(380px);
     margin: 0 auto;
   }
+  &__title {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+  }
   &__image {
     margin-bottom: rem(20px);
     width: 100%;
@@ -66,7 +71,7 @@
     max-width: rem(380px);
     z-index: 2;
     padding: rem(35px) 0 rem(30px);
-    @include mini{
+    @include mini {
       width: 100%;
     }
   }

@@ -4,13 +4,13 @@
   &__container {
     display: flex;
     justify-content: center;
-    padding: 70px 10px;
+    padding: rem(70px) rem(10px);
     position: relative;
     @include tablets {
-      padding: 50px 24px;
+      padding: rem(50px) rem(24px);
     }
     @include mobile {
-      padding: 35px 15px;
+      padding: rem(35px) rem(15px);
     }
   }
   &__triangle {
@@ -21,12 +21,13 @@
   }
   &__title {
     color: #fff;
-    @include sansus();
-    font-size: 63px;
-    text-transform: uppercase;
-    position: relative;
-    padding: 0 0 40px;
-    @include underline(25, #fff)
+    @include underline(20, #fff);
+    padding: rem(10px) 0 rem(35px);
+    @include tablets {
+      font-size: rem(48px);
+      padding: rem(10px) 0 rem(20px);
+      @include underline(10, #fff)
+    }
   }
   &__desc {
     color: #fff
@@ -63,39 +64,42 @@
       background-color: $green;
       position: absolute;
       top: 50%;
-      right: -20px;
+      right: rem(-20px);
       transform: translateY(-50%);
-      width: 40px;
-      height: 40px;
+      width: rem(40px);
+      height: rem(40px);
       border-radius: 50%;
       box-shadow: 4px 0 4px rgba(#000, .2);
       cursor: pointer;
       justify-content: flex-end;
       align-items: center;
       z-index: 10;
-      @include tablets{
+      @include tablets {
         display: flex;
       }
     }
   }
   &-menu {
     &__list {
-      padding-right: 20px;
+      padding-right: rem(20px);
+      padding-left: rem(10px);
     }
     &__item {
       position: relative;
+      display: flex;
+      justify-content: flex-end;
       &--active,
       &:hover {
         &::after {
           content: "";
-          margin-left: 17px;
+          margin-left: rem(17px);
           height: 100%;
-          width: 3px;
+          width: rem(3px);
           background-color: $light-green;
           position: absolute;
           top: 0;
         }
-        .blog-menu__link {
+        .blog-menu__btn {
           transition: .3s;
           @include roboto("bold");
           color: $light-green;
@@ -114,11 +118,13 @@
         }
       }
     }
-    &__link {
+    &__btn {
+      @include offBtnStyle;
       color: #455a64;
       text-decoration: none;
       display: block;
-      padding: 15px 0 14px;
+      padding: rem(15px) 0 rem(14px);
+      text-align: right;
       @include tablets {
         color: #fff;
         opacity: .7;
@@ -127,9 +133,9 @@
   }
   &__content {
     flex-basis: 70%;
-    max-width: 880px;
+    max-width: rem(880px);
     @include desktop {
-      max-width: 680px;
+      max-width: rem(680px);
     }
     @include tablets {
       flex-basis: 100%;
@@ -140,7 +146,7 @@
 
 .post {
   position: relative;
-  padding-bottom: 140px;
+  padding-bottom: rem(140px);
   &:last-child {
     padding-bottom: 0;
     &::after {
@@ -150,28 +156,28 @@
   &::after {
     content: "";
     display: block;
-    max-width: 680px;
+    max-width: rem(680px);
     width: 100%;
-    height: 5px;
+    height: rem(5px);
     background-color: rgba($grey, .1);
     position: absolute;
     left: 0;
     bottom: 0;
-    margin-bottom: 70px;
+    margin-bottom: rem(70px);
   }
   &__header {
-    margin-bottom: 25px;
+    margin-bottom: rem(25px);
   }
   &__title {
     @include sansus();
-    font-size: 35px;
+    font-size: rem(35px);
   }
   &__link {
     color: #455a64;
     text-decoration: none;
   }
   &__meta {
-    margin-bottom: 25px;
+    margin-bottom: rem(25px);
   }
   &__date {
     color: $light-green;

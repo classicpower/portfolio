@@ -6,15 +6,15 @@ block variables
 block scripts
   script(src='blog.bundle.js')
 
-block header_title
-  .header__title
-    +icon("blog_header","section__title-img section__title-img--header")
+block header_image
+  .header__image
+    +icon("blog_header","header__image-icon section__image-icon")
 block user
   .user__wrap.user__wrap--transparent
     .user
       .user__image.user__image--blog
         +image("alex-about.jpg","Алексей Карасев","user__image-pic")
-      .section__title
+      .user__title
         h1.blog__title.title Блог
       .blog__desc Статьи, которые я написал
 block section_blog
@@ -27,13 +27,13 @@ block section_blog
         button.blog__aside-button.js-aside-btn(type="button")
         ul.blog-menu__list
           li.blog-menu__item.blog-menu__item--active
-            a.blog-menu__link(href="#") Самое важное в SASS
+            button.blog-menu__btn(type="button") Самое важное в SSS
           li.blog-menu__item.blog-menu__item 
-            a.blog-menu__link(href="#") Приёмы в вёрстке, без которых не обходится ни один сайт
+            button.blog-menu__btn(type="button") Приёмы в вёрстке, без которых не обходится ни один сайт
           li.blog-menu__item.blog-menu__item
-            a.blog-menu__link(href="#") Самый необходимый набор Gulp плагинов
+            button.blog-menu__btn(type="button") Самый необходимый набор Gulp плагинов
           li.blog-menu__item.blog-menu__item
-            a.blog-menu__link(href="#") Почему я выбрал Jade
+            button.blog-menu__btn(type="button") Почему я выбрал Jade
       section.blog__content
         article.post
           header.post__header
