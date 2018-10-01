@@ -42,15 +42,24 @@
       }
     }
   }
+  &__image {
+    &-icon {
+      height: rem(165px);
+      fill: #93c42e;
+      @include tablets() {
+        height: rem(140px);
+      }
+    }
+  }
   &__info {
     height: 100%;
   }
   &__user {
     padding-bottom: rem(56px);
-    @include tablets1000{
+    @include tablets1000 {
       padding-bottom: rem(40px);
     }
-    @include mobile{
+    @include mobile {
       padding-bottom: rem(30px);
     }
   }
