@@ -1,7 +1,9 @@
+import "./modules/effects-water";
+
 const front = document.querySelector('.welcome__front');
 const authBtn = document.querySelector('.js-auth-btn');
 const mainBtn = document.querySelector('.js-main-btn');
-const flipper = document.querySelector('.welcome__flipper');
+const flipper = document.querySelector('.js-flipper');
 
 
 authBtn.onclick = function () {
