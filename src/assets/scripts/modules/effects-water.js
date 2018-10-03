@@ -55,8 +55,9 @@ function onWindowResize() {
   uniforms.u_mouse.value.y = mouse.y;
   if (window.innerWidth > 1024) {
     container.appendChild(renderer.domElement);
-  } else {
-    container.removeChild(renderer.domElement);
+  } 
+  else if(window.innerWidth < 1024 && container.children.length > 0) {
+      container.removeChild(renderer.domElement);
   }
 }
 function animate() {
