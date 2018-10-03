@@ -38,7 +38,7 @@
     margin-bottom: rem(35px);
     text-align: center;
     @include tablets1000 {
-      margin-bottom: 0;
+      margin-bottom: rem(20px);
     }
   }
   &__title {
