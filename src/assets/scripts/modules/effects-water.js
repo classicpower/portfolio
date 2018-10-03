@@ -42,8 +42,7 @@ function init() {
   scene.add(mesh);
   renderer = new THREE.WebGLRenderer();
   renderer.setPixelRatio(window.devicePixelRatio);
-
-  container.appendChild(renderer.domElement);
+  
   onWindowResize();
   window.addEventListener('resize', onWindowResize, false);
 }
@@ -54,6 +53,11 @@ function onWindowResize() {
   uniforms.u_resolution.value.y = renderer.domElement.height;
   uniforms.u_mouse.value.x = mouse.x;
   uniforms.u_mouse.value.y = mouse.y;
+  if (window.innerWidth >= 1024) {
+    container.appendChild(renderer.domElement);
+  } else {
+    container.removeChild(renderer.domElement);
+  }
 }
 function animate() {
   requestAnimationFrame(animate);
