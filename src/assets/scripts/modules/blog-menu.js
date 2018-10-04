@@ -17,7 +17,7 @@ function openMenu() {
 function showMenu() {
   const header = document.querySelector('.header');
   let heightHeader = header.clientHeight;
-  let winWidth = window.screen.width;
+  let winWidth = window.innerWidth;
   if(window.scrollY > heightHeader / 2 && winWidth < 768){
     asideBtn.style.display = "flex";
   }

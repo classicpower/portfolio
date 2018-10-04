@@ -3,9 +3,7 @@ import "./modules/footer";
 import "./modules/blog-menu";
 
 const items = document.querySelectorAll('.blog-menu__item');
-const itemActive = document.querySelector('.blog-menu__item--active');
 const btns = document.querySelectorAll('.blog-menu__btn');
-
 
 for (let i = 0; i < btns.length; i++) {
   const button = btns[i];
