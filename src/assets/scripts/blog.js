@@ -26,6 +26,8 @@ for (let i = 0; i < btns.length; i++) {
       let postHeight = post.clientHeight;
       if (post.dataset.id === data_id) {
         window.scrollTo({
+          //определяем top поста и высоту поста
+          //Складываем и прокручиваем
           top: post.offsetTop + postHeight,
           behavior: "smooth"
         })
