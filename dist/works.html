@@ -236,6 +236,34 @@
 					<li class="fixed-menu__item"><a class="fixed-menu__link" href="index.html">Авторизация</a></li>
 				</ul>
 			</nav>
+			<script type="text/x-template" id="skills-list">
+				<div class="skills">
+					<ul class="skills__list">
+						<li class="skills__item">
+							<skills-row></skills-row>
+						</li>
+					</ul>
+				</div>
+			</script>
+			<script type="text/x-template" id="skills-item">
+				<div class="skills__row">
+					<div class="skills__row-title">Frontend</div>
+					<ul class="skills__row-list">
+						<li class="skills__row-item">
+							<skill></skill>
+						</li>
+					</ul>
+				</div>
+			</script>
+			<script type="text/x-template" id="skill">
+				<figure class="skill">
+					<svg class="skill__figure" viewBox="0 0 120 120" width="120px" height="120px" preserveAspectRatio="none">
+						<circle class="skill__circle skill__circle-back" cx="60" cy="60" r="50"></circle>
+						<circle class="skill__circle skill__circle-front" cx="60" cy="60" r="50"></circle>
+					</svg>
+					<div class="skill__title">CSS3</div>
+				</figure>
+			</script>
 		</div>
 		<script src="bootloader.bundle.js"></script>
 		<script src="vendor.bundle.js"></script>

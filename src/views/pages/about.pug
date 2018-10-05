@@ -44,25 +44,8 @@ block section_about
               .about__user-desc.user__desc
                 p Больше всего меня привлекет Frontend разработка, но я также знаком и могу решать не сложные задачи на Backend. Но давайте по порядку.
             .about__info
-              .skills
-                - 
-                  var skills = [
-                    ['Frontend', [['Html5', 30], ['css3', 50], ['JavaScript & jQuery', 70]]],
-                    ['Backend', [['php', 30], ['mySQL', 50], ['Node.js & npm', 70], ['Mongo.db', 70]]],
-                    ['Workflow', [['git', 30], ['gulp', 50], ['webpack', 70]]],
-                  ]
-                ul.skills__list
-                  each skillsrow in skills
-                    li.skills__item.skills__row
-                      .skills__row-title #{skillsrow[0]}
-                      ul.skills__row-list
-                        each skill in skillsrow[1]
-                          li.skills__row-item
-                            figure.skill
-                              svg(viewBox="0 0 120 120" width="120px" height="120px" preserveAspectRatio="none").skill__figure
-                                circle.skill__circle.skill__circle-back(cx="60" cy="60" r="50")
-                                circle.skill__circle.skill__circle-front(cx="60" cy="60" r="50")
-                              .skill__title #{skill[0]}
+              #skills-component
+                
 block section_contacts                            
   section.contacts.section.js-add-padding
     .contacts__bg

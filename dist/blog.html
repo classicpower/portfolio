@@ -67,13 +67,13 @@
 							<button class="blog__aside-button js-aside-btn" type="button"></button>
 							<ul class="blog-menu__list">
 								<li class="blog-menu__item">
-									<button class="blog-menu__btn" type="button" data-id="post-4">Самое важное в SASS</button>
+									<button class="blog-menu__btn" type="button" data-id="4">Самое важное в SASS</button>
 								</li>
 								<li class="blog-menu__item">
-									<button class="blog-menu__btn" type="button" data-id="post-3">Приёмы в вёрстке, без которых не обходится ни один сайт</button>
+									<button class="blog-menu__btn" type="button" data-id="3">Приёмы в вёрстке, без которых не обходится ни один сайт</button>
 								</li>
 								<li class="blog-menu__item">
-									<button class="blog-menu__btn" type="button" data-id="post-2">Самый необходимый набор Gulp плагинов</button>
+									<button class="blog-menu__btn" type="button" data-id="2">Самый необходимый набор Gulp плагинов</button>
 								</li>
 								<li class="blog-menu__item">
 									<button class="blog-menu__btn" type="button">Почему я выбрал Jade</button>
@@ -81,7 +81,7 @@
 							</ul>
 						</aside>
 						<section class="blog__content">
-							<article class="post" id="post-4">
+							<article class="post" data-id="4">
 								<header class="post__header">
 									<hgroup>
 										<h2 class="post__title"><a class="post__link" href="#">Самое важное в SASS</a></h2>
@@ -95,7 +95,7 @@
 									<p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
 								</div>
 							</article>
-							<article class="post" id="post-3">
+							<article class="post" data-id="3">
 								<header class="post__header">
 									<hgroup>
 										<h2 class="post__title"><a class="post__link" href="#">Приёмы в вёрстке, без которых не обходится ни один сайт</a></h2>
@@ -109,7 +109,7 @@
 									<p>Не следует, однако забывать, что укрепление и развитие структуры обеспечивает широкому кругу (специалистов) участие в формировании систем массового участия. Идейные соображения высшего порядка, а также рамки и место обучения кадров обеспечивает широкому кругу (специалистов) участие в формировании позиций, занимаемых участниками в отношении поставленных задач. Товарищи! постоянный количественный рост и сфера нашей активности способствует подготовки и реализации модели развития. С другой стороны рамки и место обучения кадров влечет за собой процесс внедрения и модернизации системы обучения кадров, соответствует насущным потребностям.</p>
 								</div>
 							</article>
-							<article class="post" id="post-2">
+							<article class="post" data-id="2">
 								<header class="post__header">
 									<hgroup>
 										<h2 class="post__title"><a class="post__link" href="#">Самый необходимый набор Gulp плагинов</a></h2>
@@ -179,6 +179,34 @@
 					<li class="fixed-menu__item"><a class="fixed-menu__link" href="index.html">Авторизация</a></li>
 				</ul>
 			</nav>
+			<script type="text/x-template" id="skills-list">
+				<div class="skills">
+					<ul class="skills__list">
+						<li class="skills__item">
+							<skills-row></skills-row>
+						</li>
+					</ul>
+				</div>
+			</script>
+			<script type="text/x-template" id="skills-item">
+				<div class="skills__row">
+					<div class="skills__row-title">Frontend</div>
+					<ul class="skills__row-list">
+						<li class="skills__row-item">
+							<skill></skill>
+						</li>
+					</ul>
+				</div>
+			</script>
+			<script type="text/x-template" id="skill">
+				<figure class="skill">
+					<svg class="skill__figure" viewBox="0 0 120 120" width="120px" height="120px" preserveAspectRatio="none">
+						<circle class="skill__circle skill__circle-back" cx="60" cy="60" r="50"></circle>
+						<circle class="skill__circle skill__circle-front" cx="60" cy="60" r="50"></circle>
+					</svg>
+					<div class="skill__title">CSS3</div>
+				</figure>
+			</script>
 		</div>
 		<script src="bootloader.bundle.js"></script>
 		<script src="vendor.bundle.js"></script>
