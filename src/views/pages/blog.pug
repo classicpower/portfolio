@@ -10,13 +10,7 @@ block header_image
   .header__image
     +icon("blog_header","header__image-icon section__image-icon")
 block user
-  .user__wrap.user__wrap--transparent
-    .user
-      .user__image.user__image--blog
-        +image("alex-about.jpg","Алексей Карасев","user__image-pic")
-      .user__title
-        h1.blog__title.title Блог
-      .blog__desc Статьи, которые я написал
+  +user("blog")
 block section_blog
   .blog.js-add-padding
     .blog__triangle.triangle

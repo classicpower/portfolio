@@ -18,13 +18,28 @@ mixin social(mod)
         a.social__link(href='#', title='Telegram', target='_blank')
           +icon('telegram_logo', 'social__icon social__icon--tg')
 
-mixin user()
-  .user
-    .user__image
-      +image("alex-about.jpg","Алексей Карасев","user__image-pic")
-    .user__info
-      h1.user__title Алексей Карасев
-      .user__subtitle Личный сайт веб разработчика
+mixin user(section)
+  if section=='header'
+    .header__user.user
+      .user__image
+        +image("alex-about.jpg","Алексей Карасев","user__image-pic")
+      .user__info
+        h1.user__title Алексей Карасев
+        .user__subtitle Личный сайт веб разработчика
+  if section=='index'
+    .user
+      .user__image
+        +image("alex-about.jpg","Алексей Карасев","user__image-pic")
+      .user__info
+        h1.user__title Алексей Карасев
+        .user__subtitle Личный сайт веб разработчика
+  if section=='blog'
+    .header__user.user
+      .user__image.user__image--blog
+        +image("alex-about.jpg","Алексей Карасев","user__image-pic")
+      .user__title
+        h1.blog__title.title Блог
+      .blog__desc Статьи, которые я написал
 
 mixin favicon()
   link(rel="apple-touch-icon" sizes="180x180" href="assets/images/favicon/apple-touch-icon.png")
