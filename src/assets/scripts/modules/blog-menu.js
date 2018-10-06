@@ -1,11 +1,10 @@
 const asideBtn = document.querySelector('.js-aside-btn');
 const aside = document.querySelector('.js-aside');
-const items = document.querySelectorAll('.blog-menu__item');
-const btns = document.querySelectorAll('.blog-menu__btn');
-const posts = document.querySelectorAll('.post');
-const menuList = document.querySelector('.blog-menu__list');
-let menuListOffset = menuList.getBoundingClientRect();
-let asideOffset = aside.getBoundingClientRect();
+// const items = document.querySelectorAll('.blog-menu__item');
+// const btns = document.querySelectorAll('.blog-menu__btn');
+// const posts = document.querySelectorAll('.post');
+// const menuList = document.querySelector('.blog-menu__list');
+
 
 // //Находим все кнпоки меню
 // for (let i = 0; i < btns.length; i++) {
@@ -36,30 +35,6 @@ let asideOffset = aside.getBoundingClientRect();
 //         })
 //       }
 //     }
-//   }
-// }
-// function stickyMenu() {
-//   const aside = document.querySelector('.js-aside');
-//   const menuList = document.querySelector('.blog-menu__list');
-//   const menuListOffset = menuList.getBoundingClientRect();
-//   const asideOffset = aside.getBoundingClientRect();
-//   console.log(menuListOffset.top + " Позиция Меню топ");
-//   console.log(menuListOffset.left + " Позиция Меню left");
-//   console.log(menuListOffset.width + " Позиция Меню ширина");
-//   console.log(asideOffset.top + " Позиция aside");
-//   console.log(window.scrollY);
-//   if (asideOffset.top <= 35) {
-//     menuList.style.position = "fixed";
-//     menuList.style.top = 35 + "px";
-//     menuList.style.left = menuListOffset.left + "px";
-//     menuList.style.width = menuListOffset.width + "px";
-//     menuList.style.marginRight = 20 + "%";
-//   }
-//   if (asideOffset.top > 35) {
-//     menuList.style.position = "relative";
-//     menuList.style.top = 0 + "px";
-//     menuList.style.left = 0 + "px";
-
 //   }
 // }
 //сдивгаем aside влево на собственную ширину
@@ -101,18 +76,15 @@ window.onresize = function () {
   asideWidth();
   asideBtn.classList.remove('js-aside-open');
   showMenuBtn();
-  stickyMenu()
 
 };
 window.onload = function () {
   asideWidth();
   asideBtn.classList.remove('js-aside-open');
   showMenuBtn();
-  stickyMenu()
 
 };
 window.onscroll = function () {
   showMenuBtn();
-  stickyMenu();
 };
 
