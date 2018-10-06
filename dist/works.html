@@ -239,29 +239,29 @@
 			<script type="text/x-template" id="skills-list">
 				<div class="skills">
 					<ul class="skills__list">
-						<li class="skills__item">
-							<skills-row></skills-row>
+						<li class="skills__item" v-for="skillsRow in skills" :key="skillsRow.skillsGroup">
+							<skills-row :skills="skillsRow"></skills-row>
 						</li>
 					</ul>
 				</div>
 			</script>
 			<script type="text/x-template" id="skills-item">
 				<div class="skills__row">
-					<div class="skills__row-title">Frontend</div>
+					<div class="skills__row-title">{{skills.skillsGroup}}</div>
 					<ul class="skills__row-list">
-						<li class="skills__row-item">
-							<skill></skill>
+						<li class="skills__row-item" v-for="(skillPercentage, skillTitle) in skills.skillsItem">      
+							<skill :title="skillTitle" :percentage="skillPercentage"></skill>
 						</li>
 					</ul>
 				</div>
 			</script>
 			<script type="text/x-template" id="skill">
 				<figure class="skill">
-					<svg class="skill__figure" viewBox="0 0 120 120" width="120px" height="120px" preserveAspectRatio="none">
-						<circle class="skill__circle skill__circle-back" cx="60" cy="60" r="50"></circle>
-						<circle class="skill__circle skill__circle-front" cx="60" cy="60" r="50"></circle>
+					<svg class="skill__figure" viewBox="0 0 110 110" width="110px" height="110px" preserveAspectRatio="none">
+						<circle class="skill__circle skill__circle-back" cx="55" cy="55" r="45"></circle>
+						<circle class="skill__circle skill__circle-front" cx="55" cy="55" r="45" ref="circle"></circle>
 					</svg>
-					<div class="skill__title">CSS3</div>
+					<div class="skill__title">{{title}}</div>
 				</figure>
 			</script>
 		</div>

@@ -25,6 +25,11 @@ for (let i = 0; i < btns.length; i++) {
       const post = posts[i];
       let postHeight = post.clientHeight;
       if (post.dataset.id === data_id) {
+        // console.log(post.offsetTop + " Позиция поста");
+        // window.onscroll = function () {
+        //   console.log(postPosition);
+
+        // }
         window.scrollTo({
           //определяем top поста и высоту поста
           //Складываем и прокручиваем
