@@ -20,7 +20,7 @@ mixin social(mod)
 
 mixin user(section)
   if section=='header'
-    .header__user.user
+    .header__user.user.js-parallax-user
       .user__image
         +image("alex-about.jpg","Алексей Карасев","user__image-pic")
       .user__info
@@ -34,7 +34,7 @@ mixin user(section)
         h1.user__title Алексей Карасев
         .user__subtitle Личный сайт веб разработчика
   if section=='blog'
-    .header__user.user
+    .header__user.user.js-parallax-user
       .user__image.user__image--blog
         +image("alex-about.jpg","Алексей Карасев","user__image-pic")
       .user__title

@@ -1,6 +1,7 @@
 import "./modules/hamburger";
 import "./modules/footer";
 import "./modules/blog-menu";
+import "./modules/parallax";
 
 const items = document.querySelectorAll('.blog-menu__item');
 const btns = document.querySelectorAll('.blog-menu__btn');

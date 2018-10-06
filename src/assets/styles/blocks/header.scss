@@ -1,6 +1,7 @@
 .header {
   display: flex;
   flex-direction: column;
+  justify-content: center;
   &__bg{
     background-image: linear-gradient(to top, rgba(2, 2, 2, 0) 0%, rgba(0, 0, 0, 0.35) 100%), url('assets/images/bg/bg.jpg');
     background-position: center;
@@ -38,18 +39,12 @@
     &-icon {
       height: rem(310px);
       fill: #fff;
+      width: 100%;
+      opacity: .1;
       @include tablets() {
         height: rem(197px);
       }
     }
-  }
-  &__user{
-    width: 100%;
-    position: absolute;
-    top: 50%;
-    left: 50%;
-    -webkit-transform: translate(-50%,-50%);
-    transform: translate(-50%,-50%);
   }
   .social {
     opacity: 1;
