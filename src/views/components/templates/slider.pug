@@ -1,0 +1,36 @@
+script(type="text/x-template")#slider-root
+  .slider.js-slider
+    info(
+      :work="currentWork"
+    )
+    display(
+      :work="currentWork"
+    )
+    buttons(
+      @click="handleSlide"
+      :works="works"
+      :currentIndex="currentIndex"
+    )
+
+script(type="text/x-template")#slider-info
+  .slider__desc.js-slider-desc
+    .slider__desc-wrap
+      .slider__desc-content
+        h3.slider__desc-title.subtitle {{work.title}}
+        h4.slider__desc-subtitle {{work.skills}}
+        a.slider__desc-link(:href="work.link" target="_blank" title="Посмотреть сайт") Посмотреть сайт
+          +icon("link", "slider__desc-icon")  
+script(type="text/x-template")#slider-display
+  .slider__main
+    img.slider__image(:src="work.photo", :alt="work.title")
+
+script(type="text/x-template")#slider-btns
+  .slider__btns
+    button.slider__up(type="button" @click="slide('next')")
+      img.slider__image(:src="nextButtonWorks[currentIndex].photo" alt="")
+      .slider__scroll
+        +icon("arrow_down","slider__scroll-icon slider__scroll-icon--up")
+    button.slider__down(type="button" @click="slide('prev')")
+      img.slider__image(:src="prevButtonWorks[currentIndex].photo" alt="")
+      .slider__scroll
+        +icon("arrow_down","slider__scroll-icon slider__scroll-icon--down")

@@ -1,12 +1,13 @@
 .slider {
   display: grid;
   grid-template-rows: 1fr 35% 35%;
-  grid-template-columns: 1fr 25% 25%;
-  grid-template-areas: "desc main main" "desc main main" "desc up down";
+  grid-template-columns: 1fr 1fr;
+  grid-template-areas: "desc main" "desc main" "desc btns";
+  min-height: 650px;
   @include tablets() {
     grid-template-rows: 1fr;
-    grid-template-columns: 1fr 1fr;
-    grid-template-areas: "main main" "desc desc" "up down";
+    grid-template-columns: 1fr;
+    grid-template-areas: "main" "desc" "btns";
   }
   &__desc {
     grid-area: desc;
@@ -22,7 +23,7 @@
     &-content {
       text-align: center;
       margin: 42px 10px 60px;
-      @include mobile{
+      @include mobile {
         margin: 30px 10px;
       }
     }
@@ -31,7 +32,7 @@
       color: $green;
       text-transform: uppercase;
       padding-bottom: rem(58px);
-      @include tablets(){
+      @include tablets() {
         padding-bottom: rem(38px);
       }
     }
@@ -63,13 +64,17 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    padding-top: 47px;
-    padding-bottom: 29px;
+    padding: 6%;
+  }
+  &__btns {
+    grid-area: btns;
+    display: flex;
   }
   &__up,
   &__down {
     position: relative;
     @include offBtnStyle();
+    padding: 1% 0;
     .slider__image {
       max-width: 80%;
       margin: 0 auto;

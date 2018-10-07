@@ -23,25 +23,7 @@ block section_works
       +icon("works_header","works__image-icon section__image-icon")
       h2.works__title.title Мои работы
     .works__slider
-      .slider.js-slider
-        .slider__desc.js-slider-desc
-          .slider__desc-wrap
-            .slider__desc-content
-              h3.slider__desc-title.subtitle Сайт школы онлайн образования
-              h4.slider__desc-subtitle html , css, javascript
-              a.slider__desc-link(href="#", title="Посмотреть сайт") Посмотреть сайт
-                +icon("link", "slider__desc-icon")  
-        .slider__main
-          +image("layer1small.png", "Первый слайд", "slider__image")
-
-        button.slider__up(type="button")
-          +image("layer1small.png", "Первый слайд", "slider__image")
-          .slider__scroll
-            +icon("arrow_down","slider__scroll-icon slider__scroll-icon--up")
-        button.slider__down(type="button")
-          +image("layer1small.png", "Первый слайд", "slider__image")
-          .slider__scroll
-            +icon("arrow_down","slider__scroll-icon slider__scroll-icon--down")
+      #slider-component
 block section_reviews
   section#reviews.reviews.js-add-padding
     .reviews__bg.js-reviews-bg

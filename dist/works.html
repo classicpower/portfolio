@@ -75,35 +75,7 @@
 						<h2 class="works__title title">Мои работы</h2>
 					</div>
 					<div class="works__slider">
-						<div class="slider js-slider">
-							<div class="slider__desc js-slider-desc">
-								<div class="slider__desc-wrap">
-									<div class="slider__desc-content">
-										<h3 class="slider__desc-title subtitle">Сайт школы онлайн образования</h3>
-										<h4 class="slider__desc-subtitle">html , css, javascript</h4><a class="slider__desc-link" href="#" title="Посмотреть сайт">Посмотреть сайт
-											<svg class="slider__desc-icon">
-												<use xlink:href="assets/images/icons/sprite.svg#link"></use>
-											</svg></a>
-									</div>
-								</div>
-							</div>
-							<div class="slider__main"><img class="slider__image" src="assets/images/content/layer1small.png" alt="Первый слайд"/>
-							</div>
-							<button class="slider__up" type="button"><img class="slider__image" src="assets/images/content/layer1small.png" alt="Первый слайд"/>
-								<div class="slider__scroll">
-									<svg class="slider__scroll-icon slider__scroll-icon--up">
-										<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
-									</svg>
-								</div>
-							</button>
-							<button class="slider__down" type="button"><img class="slider__image" src="assets/images/content/layer1small.png" alt="Первый слайд"/>
-								<div class="slider__scroll">
-									<svg class="slider__scroll-icon slider__scroll-icon--down">
-										<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
-									</svg>
-								</div>
-							</button>
-						</div>
+						<div id="slider-component"></div>
 					</div>
 				</section>
 				<section class="reviews js-add-padding" id="reviews">
@@ -259,6 +231,47 @@
 						<circle class="skill__circle skill__circle-front" cx="55" cy="55" r="45" ref="circle"></circle>
 					</svg>
 					<div class="skill__title">{{title}}</div>
+				</div>
+			</script>
+			<script type="text/x-template" id="slider-root">
+				<div class="slider js-slider">
+					<info :work="currentWork"></info>
+					<display :work="currentWork"></display>
+					<buttons @click="handleSlide" :works="works" :currentIndex="currentIndex"></buttons>
+				</div>
+			</script>
+			<script type="text/x-template" id="slider-info">
+				<div class="slider__desc js-slider-desc">
+					<div class="slider__desc-wrap">
+						<div class="slider__desc-content">
+							<h3 class="slider__desc-title subtitle">{{work.title}}</h3>
+							<h4 class="slider__desc-subtitle">{{work.skills}}</h4><a class="slider__desc-link" :href="work.link" target="_blank" title="Посмотреть сайт">Посмотреть сайт
+								<svg class="slider__desc-icon">
+									<use xlink:href="assets/images/icons/sprite.svg#link"></use>
+								</svg></a>
+						</div>
+					</div>
+				</div>
+			</script>
+			<script type="text/x-template" id="slider-display">
+				<div class="slider__main"><img class="slider__image" :src="work.photo" :alt="work.title"></div>
+			</script>
+			<script type="text/x-template" id="slider-btns">
+				<div class="slider__btns">
+					<button class="slider__up" type="button" @click="slide('next')"><img class="slider__image" :src="nextButtonWorks[currentIndex].photo" alt="">
+						<div class="slider__scroll">
+							<svg class="slider__scroll-icon slider__scroll-icon--up">
+								<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+							</svg>
+						</div>
+					</button>
+					<button class="slider__down" type="button" @click="slide('prev')"><img class="slider__image" :src="prevButtonWorks[currentIndex].photo" alt="">
+						<div class="slider__scroll">
+							<svg class="slider__scroll-icon slider__scroll-icon--down">
+								<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
+							</svg>
+						</div>
+					</button>
 				</div>
 			</script>
 		</div>
