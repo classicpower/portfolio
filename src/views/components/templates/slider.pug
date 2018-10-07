@@ -27,10 +27,10 @@ script(type="text/x-template")#slider-display
 script(type="text/x-template")#slider-btns
   .slider__btns
     button.slider__up(type="button" @click="slide('next')")
-      img.slider__image(:src="nextButtonWorks[currentIndex].photo" alt="")
+      img.slider__image(:src="nextButtonWorks[currentIndex].photo", :alt="nextButtonWorks[currentIndex].title")
       .slider__scroll
         +icon("arrow_down","slider__scroll-icon slider__scroll-icon--up")
     button.slider__down(type="button" @click="slide('prev')")
-      img.slider__image(:src="prevButtonWorks[currentIndex].photo" alt="")
+      img.slider__image(:src="prevButtonWorks[currentIndex].photo", :alt="prevButtonWorks[currentIndex].title")
       .slider__scroll
         +icon("arrow_down","slider__scroll-icon slider__scroll-icon--down")

@@ -258,14 +258,14 @@
 			</script>
 			<script type="text/x-template" id="slider-btns">
 				<div class="slider__btns">
-					<button class="slider__up" type="button" @click="slide('next')"><img class="slider__image" :src="nextButtonWorks[currentIndex].photo" alt="">
+					<button class="slider__up" type="button" @click="slide('next')"><img class="slider__image" :src="nextButtonWorks[currentIndex].photo" :alt="nextButtonWorks[currentIndex].title">
 						<div class="slider__scroll">
 							<svg class="slider__scroll-icon slider__scroll-icon--up">
 								<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
 							</svg>
 						</div>
 					</button>
-					<button class="slider__down" type="button" @click="slide('prev')"><img class="slider__image" :src="prevButtonWorks[currentIndex].photo" alt="">
+					<button class="slider__down" type="button" @click="slide('prev')"><img class="slider__image" :src="prevButtonWorks[currentIndex].photo" :alt="prevButtonWorks[currentIndex].title">
 						<div class="slider__scroll">
 							<svg class="slider__scroll-icon slider__scroll-icon--down">
 								<use xlink:href="assets/images/icons/sprite.svg#arrow_down"></use>
