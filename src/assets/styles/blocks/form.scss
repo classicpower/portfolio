@@ -6,18 +6,6 @@
   &--bg_color {
     background-color: rgba(#dadbd6, .6);
   }
-  &__container{
-    margin-top: -481px;
-  }
-  &__blur {
-    background-image: url("assets/images/bg/reviews-bg.png");
-    background-repeat: no-repeat;
-    background-position: 0 0;
-    background-size: auto;
-    height: 100%;
-    width: 100%;
-    filter: blur(5px);
-  }
   &__row {
     z-index: 2;
     display: flex;

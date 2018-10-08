@@ -27,7 +27,6 @@ block section_works
 block section_reviews
   section#reviews.reviews.js-add-padding
     .reviews__bg.js-reviews-bg
-      img.reviews__bg-img(src="assets/images/bg/reviews-bg.png", alt="Фон для отзывов")
     .container.reviews__container
       +icon("list1","reviews__icon reviews__icon--list1")
       +icon("list2","reviews__icon reviews__icon--list2")
@@ -51,9 +50,9 @@ block section_reviews
                 p Этот код выдержит любые испытания. Только пожалуйста, не загружайте сайт на слишком старых браузерах!
               h3.reviews__content-title Владимир Сабанцев
               .reviews__content-subtitle — преподаватель
-    .reviews__form.js-blur-wrapper.js-add-height
-      .form__blur.js-blur
-      .form__container.js-add-margin
+    .reviews__form.js-blur-wrapper
+      .reviews__form-blur.js-blur
+      .reviews__form-container
         form#form.form.form__reviews.form--bg_color(action="")
           h2.form__subtitle.subtitle Связаться со мной
           .form__row.form__row--reviews
