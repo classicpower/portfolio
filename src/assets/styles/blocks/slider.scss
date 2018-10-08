@@ -1,6 +1,6 @@
 .slider {
   display: grid;
-  grid-template-rows: 1fr 35% 35%;
+  grid-template-rows: 1fr 35%;
   grid-template-columns: 1fr 1fr;
   grid-template-areas: "desc main" "desc main" "desc btns";
   min-height: 650px;
