@@ -37,6 +37,9 @@
     text-align: right;
     margin-right: 7%;
     transition: .3s;
+    position: sticky;
+    top: 0;
+    align-self: flex-start;
     @include desktop {
       max-width: 300px;
       margin-right: 10%;
