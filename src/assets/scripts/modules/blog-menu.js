@@ -8,7 +8,6 @@ const posts = document.querySelectorAll('.post');
 const btnsNewArray = Array.from(btns);
 const postsNewArray = Array.from(posts);
 const activeBtnClass = "blog-menu__item--active";
-const ok = false;
 
 //Инициализируем все функции и действия после загрузки страницы
 function init() {
@@ -58,7 +57,6 @@ function findAllBtns() {
   for (let i = 0; i < btns.length; i++) {
     const button = btns[i];
     button.onclick = function () {
-      ok;
       addActiveClass();
       scrollToPost();
     }
@@ -66,7 +64,6 @@ function findAllBtns() {
 }
 //Скролим и добавляем активный класс. Пост соответствует кнопки
 function scrollOnPostAddActiveClass() {
-  if (!ok) return;
   const wScroll = window.pageYOffset;
   const arrayPost = postsNewArray.map(function (post) {
     const postOffset = post.offsetTop;
