@@ -1,42 +1,96 @@
-const asideBtn = document.querySelector('.js-aside-btn');
+//Объявляем переменные
 const aside = document.querySelector('.js-aside');
-// const items = document.querySelectorAll('.blog-menu__item');
-// const btns = document.querySelectorAll('.blog-menu__btn');
-// const posts = document.querySelectorAll('.post');
-// const menuList = document.querySelector('.blog-menu__list');
+const asideOpen = document.querySelector('.js-aside-open');
+const asideList = document.querySelector('.js-aside-list');
+const items = document.querySelectorAll('.blog-menu__item');
+const btns = document.querySelectorAll('.blog-menu__btn');
+const posts = document.querySelectorAll('.post');
+const btnsNewArray = Array.from(btns);
+const postsNewArray = Array.from(posts);
+const activeBtnClass = "blog-menu__item--active";
+const ok = false;
+
+//Инициализируем все функции и действия после загрузки страницы
+function init() {
+  addFirstItemActiveClass()
+  removeOpenClassMenu()
+  asideWidth();
+  showMenuBtn();
+  findAllBtns();
+  window.addEventListener('scroll', scrollOnPostAddActiveClass);
+}
+//Добавляем активный класс первому элементу списка
+function addFirstItemActiveClass() {
+  asideList.children[0].classList.add(activeBtnClass);
+}
+//Удаляем активный класс у всех элементов списка и добавляем активный класс
+function addActiveClass(event) {
+  event = event || window.event;
+  const targetBtn = event.target;
+  const parent = targetBtn.parentNode;
+  for (let i = 0; i < items.length; i++) {
+    const item = items[i];
+    item.classList.remove(activeBtnClass);
+  }
+  parent.classList.add(activeBtnClass);
+}
+
+//Находим все посты, если data id совпадает, то скролим до нужного поста
+function scrollToPost(event) {
+  event = event || window.event;
+  const targetBtn = event.target;
+  let dataId = targetBtn.dataset.id;
+  for (let i = 0; i < posts.length; i++) {
+    const post = posts[i];
+    let postHeight = post.clientHeight;
+    if (post.dataset.id === dataId) {
+      window.scrollTo({
+        //определяем top поста и высоту поста
+        //Складываем и прокручиваем
+        top: post.offsetTop + postHeight,
+        behavior: "smooth"
+      })
+    }
+  }
+}
+//Находим все кнпоки меню и добавляем события по клику
+function findAllBtns() {
+  for (let i = 0; i < btns.length; i++) {
+    const button = btns[i];
+    button.onclick = function () {
+      ok;
+      addActiveClass();
+      scrollToPost();
+    }
+  }
+}
+//Скролим и добавляем активный класс. Пост соответствует кнопки
+function scrollOnPostAddActiveClass() {
+  if (!ok) return;
+  const wScroll = window.pageYOffset;
+  const arrayPost = postsNewArray.map(function (post) {
+    const postOffset = post.offsetTop;
+    const postHeader = post.children[0];
+    const postHeaderHeight = postHeader.offsetHeight;
+    const fullArticleHeight = postOffset + postHeaderHeight;
+    return {
+      coordY: fullArticleHeight
+    }
+  })
+  arrayPost.forEach((post, i) => {
+    const currentBtn = btnsNewArray[i];
+    const parent = currentBtn.parentElement;
+    if (wScroll >= post.coordY && currentBtn) {
+      for (const iter of btnsNewArray) {
+        const parent = iter.parentElement;
+        parent.classList.remove(activeBtnClass)
+      }
+      parent.classList.add(activeBtnClass)
+    }
+  })
+}
 
 
-// //Находим все кнпоки меню
-// for (let i = 0; i < btns.length; i++) {
-//   const button = btns[i];
-//   button.onclick = function () {
-//     //При клике на кнопку определяем data id и родительский элемент,
-//     //Удаляем все активные элементы у списков и добавляем активный класс по клику
-//     let data_id = this.dataset.id;
-//     let parent = this.parentNode;
-//     for (let i = 0; i < items.length; i++) {
-//       const item = items[i];
-//       item.classList.remove("blog-menu__item--active");
-//     }
-//     parent.classList.add("blog-menu__item--active");
-//     //Находим все посты, если data id совпадает, то скролим до нужного поста
-//     for (let i = 0; i < posts.length; i++) {
-//       const post = posts[i];
-//       let postHeight = post.clientHeight;
-//       let postPosition = pageYOffset - postHeight;
-//       if (post.dataset.id === data_id) {
-//         console.log(post.offsetTop + " Позиция поста");
-
-//         window.scrollTo({
-//           //определяем top поста и высоту поста
-//           //Складываем и прокручиваем
-//           top: post.offsetTop + postHeight,
-//           behavior: "smooth"
-//         })
-//       }
-//     }
-//   }
-// }
 //сдивгаем aside влево на собственную ширину
 function asideWidth() {
   let asideWidth = aside.clientWidth;
@@ -44,47 +98,50 @@ function asideWidth() {
 }
 //Открываем/закрываем меню, добавляя класс open
 function openMenu() {
-  if (!asideBtn.classList.contains('js-aside-open')) {
-    asideBtn.classList.add('js-aside-open');
+  if (!asideOpen.classList.contains('js-aside-open')) {
+    asideOpen.classList.add('js-aside-open');
     aside.style.left = 0;
   } else {
-    asideBtn.classList.remove('js-aside-open');
+    asideOpen.classList.remove('js-aside-open');
     asideWidth()
   }
 }
 //Отображаем кнопку меню при прокрутке
 function showMenuBtn() {
   const header = document.querySelector('.header');
+  let wScroll = window.pageYOffset;
   let heightHeader = header.clientHeight;
   let winWidth = window.innerWidth;
-  if (window.scrollY > heightHeader / 2 && winWidth < 768) {
-    asideBtn.style.display = "flex";
+  if (wScroll > heightHeader / 2 && winWidth < 768) {
+    asideOpen.style.display = "flex";
+    console.log(asideOpen);
+    console.log(wScroll);
   }
-  if (window.scrollY < heightHeader / 2) {
-    asideBtn.style.display = "none";
+  if (wScroll < heightHeader / 2) {
+    asideOpen.style.display = "none";
   }
   if (winWidth > 768) {
-    asideBtn.style.display = "none";
+    asideOpen.style.display = "none";
   }
 }
+
+function removeOpenClassMenu() {
+  asideOpen.classList.remove('js-aside-open');
+}
 //По клику открываем/закрываем меню
-asideBtn.onclick = function () {
+asideOpen.onclick = function () {
   openMenu();
 };
 
 window.onresize = function () {
   asideWidth();
-  asideBtn.classList.remove('js-aside-open');
+  removeOpenClassMenu()
   showMenuBtn();
 
 };
 window.onload = function () {
-  asideWidth();
-  asideBtn.classList.remove('js-aside-open');
-  showMenuBtn();
+  init()
+};
 
-};
-window.onscroll = function () {
-  showMenuBtn();
-};
+window.addEventListener('scroll', showMenuBtn);
 
