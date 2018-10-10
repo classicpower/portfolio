@@ -5,6 +5,7 @@
   min-height: 100vh;
   height: 100vh;
   max-height: 1000px;
+  overflow: hidden;
   &__bg {
     position: relative;
     background-image: url('assets/images/bg/bg.jpg');

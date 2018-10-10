@@ -11,7 +11,6 @@ const activeBtnClass = "blog-menu__item--active";
 
 //Инициализируем все функции и действия после загрузки страницы
 function init() {
-  addFirstItemActiveClass()
   removeOpenClassMenu()
   asideWidth();
   showMenuBtn();
@@ -90,7 +89,7 @@ function scrollOnPostAddActiveClass() {
 
 //сдивгаем aside влево на собственную ширину
 function asideWidth() {
-  let asideWidth = aside.clientWidth;
+  const asideWidth = aside.clientWidth;
   aside.style.left = -asideWidth + 'px';
 }
 //Открываем/закрываем меню, добавляя класс open
@@ -106,15 +105,13 @@ function openMenu() {
 //Отображаем кнопку меню при прокрутке
 function showMenuBtn() {
   const header = document.querySelector('.header');
-  let wScroll = window.pageYOffset;
+  const wScroll = window.pageYOffset;
   let heightHeader = header.clientHeight;
   let winWidth = window.innerWidth;
   if (wScroll > heightHeader / 2 && winWidth < 768) {
     asideOpen.style.display = "flex";
-    console.log(asideOpen);
-    console.log(wScroll);
   }
-  if (wScroll < heightHeader / 2) {
+  if (wScroll < heightHeader / 2 && !asideOpen.classList.contains('js-aside-open')) {
     asideOpen.style.display = "none";
   }
   if (winWidth > 768) {
@@ -132,12 +129,14 @@ asideOpen.onclick = function () {
 
 window.onresize = function () {
   asideWidth();
-  removeOpenClassMenu()
+  removeOpenClassMenu();
   showMenuBtn();
+  init();
 
 };
 window.onload = function () {
-  init()
+  init();
+  addFirstItemActiveClass();
 };
 
 window.addEventListener('scroll', showMenuBtn);
