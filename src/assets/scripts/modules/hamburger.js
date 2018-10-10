@@ -7,7 +7,7 @@ toggle.addEventListener("click", e => {
   e.preventDefault();
   if (toggle.classList.contains("hamburger--active")) {
     toggle.classList.remove("hamburger--active");
-    menu.style.left = -9999 + "px";
+    menu.style.left = -100 + "%";
     body.classList.remove("offscroll");
   } else {
     toggle.classList.add("hamburger--active");
