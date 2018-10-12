@@ -10,12 +10,24 @@ const postsNewArray = Array.from(posts);
 const activeBtnClass = "blog-menu__item--active";
 
 //Инициализируем все функции и действия после загрузки страницы
-function init() {
-  removeOpenClassMenu()
+function initLoad() {
+  addFirstItemActiveClass()
+  removeOpenClassMenu();
   asideWidth();
   showMenuBtn();
   findAllBtns();
-  window.addEventListener('scroll', scrollOnPostAddActiveClass);
+}
+//Инициализируем все функции по скроллу
+function initScroll() {
+  showMenuBtn();
+  scrollOnPostAddActiveClass();
+}
+//Инициализируем все функции по резайзу
+function initResize() {
+  removeOpenClassMenu();
+  asideWidth();
+  showMenuBtn();
+  findAllBtns();
 }
 //Добавляем активный класс первому элементу списка
 function addFirstItemActiveClass() {
@@ -123,21 +135,10 @@ function removeOpenClassMenu() {
   asideOpen.classList.remove('js-aside-open');
 }
 //По клику открываем/закрываем меню
-asideOpen.onclick = function () {
-  openMenu();
-};
+asideOpen.addEventListener('click', openMenu);
 
-window.onresize = function () {
-  asideWidth();
-  removeOpenClassMenu();
-  showMenuBtn();
-  init();
+window.addEventListener('resize', initResize);
+window.addEventListener('load', initLoad);
+window.addEventListener('scroll', initScroll);
 
-};
-window.onload = function () {
-  init();
-  addFirstItemActiveClass();
-};
-
-window.addEventListener('scroll', showMenuBtn);
 

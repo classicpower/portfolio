@@ -140,7 +140,7 @@ eval("module.exports = function(originalModule) {\n\tif (!originalModule.webpack
 /***/ (function(module, exports, __webpack_require__) {
 
 "use strict";
-eval("\n\n__webpack_require__(/*! ./modules/effects-water */ \"./src/assets/scripts/modules/effects-water.js\");\n\n__webpack_require__(/*! ./modules/flip */ \"./src/assets/scripts/modules/flip.js\");\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXNzZXRzL3NjcmlwdHMvYXV0aC5qcz85ZWY0Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUE7O0FBQ0EiLCJmaWxlIjoiLi9zcmMvYXNzZXRzL3NjcmlwdHMvYXV0aC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBcIi4vbW9kdWxlcy9lZmZlY3RzLXdhdGVyXCI7XHJcbmltcG9ydCBcIi4vbW9kdWxlcy9mbGlwXCI7XHJcblxyXG5cclxuXHJcblxyXG5cclxuIl0sInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/assets/scripts/auth.js\n");
+eval("\n\n__webpack_require__(/*! ./modules/effects-water */ \"./src/assets/scripts/modules/effects-water.js\");\n\n__webpack_require__(/*! ./modules/flip */ \"./src/assets/scripts/modules/flip.js\");\n\n__webpack_require__(/*! ./modules/preloader */ \"./src/assets/scripts/modules/preloader.js\");\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXNzZXRzL3NjcmlwdHMvYXV0aC5qcz85ZWY0Il0sIm5hbWVzIjpbXSwibWFwcGluZ3MiOiI7O0FBQUE7O0FBQ0E7O0FBQ0EiLCJmaWxlIjoiLi9zcmMvYXNzZXRzL3NjcmlwdHMvYXV0aC5qcy5qcyIsInNvdXJjZXNDb250ZW50IjpbImltcG9ydCBcIi4vbW9kdWxlcy9lZmZlY3RzLXdhdGVyXCI7XHJcbmltcG9ydCBcIi4vbW9kdWxlcy9mbGlwXCI7XHJcbmltcG9ydCBcIi4vbW9kdWxlcy9wcmVsb2FkZXJcIjtcclxuXHJcblxyXG5cclxuXHJcblxyXG4iXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/assets/scripts/auth.js\n");
 
 /***/ }),
 
@@ -165,6 +165,18 @@ eval("\n\nvar _TweenLite = __webpack_require__(/*! gsap/TweenLite */ \"./node_mo
 
 "use strict";
 eval("\n\nvar front = document.querySelector('.welcome__front');\nvar authBtn = document.querySelector('.js-auth-btn');\nvar mainBtn = document.querySelector('.js-main-btn');\nvar flipper = document.querySelector('.js-flipper');\n\nauthBtn.onclick = function () {\n  if (front.classList.contains('js-flip')) {\n    flipper.style.transform = \"rotateY(180deg)\";\n    front.classList.remove('js-flip');\n    authBtn.style.display = 'none';\n  }\n};\nmainBtn.onclick = function () {\n  flipper.style.transform = \"rotateY(0deg)\";\n  front.classList.add('js-flip');\n  authBtn.style.display = 'block';\n};\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbIndlYnBhY2s6Ly8vLi9zcmMvYXNzZXRzL3NjcmlwdHMvbW9kdWxlcy9mbGlwLmpzPzdiMmQiXSwibmFtZXMiOlsiZnJvbnQiLCJkb2N1bWVudCIsInF1ZXJ5U2VsZWN0b3IiLCJhdXRoQnRuIiwibWFpbkJ0biIsImZsaXBwZXIiLCJvbmNsaWNrIiwiY2xhc3NMaXN0IiwiY29udGFpbnMiLCJzdHlsZSIsInRyYW5zZm9ybSIsInJlbW92ZSIsImRpc3BsYXkiLCJhZGQiXSwibWFwcGluZ3MiOiI7O0FBQ0EsSUFBTUEsUUFBUUMsU0FBU0MsYUFBVCxDQUF1QixpQkFBdkIsQ0FBZDtBQUNBLElBQU1DLFVBQVVGLFNBQVNDLGFBQVQsQ0FBdUIsY0FBdkIsQ0FBaEI7QUFDQSxJQUFNRSxVQUFVSCxTQUFTQyxhQUFULENBQXVCLGNBQXZCLENBQWhCO0FBQ0EsSUFBTUcsVUFBVUosU0FBU0MsYUFBVCxDQUF1QixhQUF2QixDQUFoQjs7QUFHQUMsUUFBUUcsT0FBUixHQUFrQixZQUFZO0FBQzVCLE1BQUlOLE1BQU1PLFNBQU4sQ0FBZ0JDLFFBQWhCLENBQXlCLFNBQXpCLENBQUosRUFBeUM7QUFDdkNILFlBQVFJLEtBQVIsQ0FBY0MsU0FBZCxHQUEwQixpQkFBMUI7QUFDQVYsVUFBTU8sU0FBTixDQUFnQkksTUFBaEIsQ0FBdUIsU0FBdkI7QUFDQVIsWUFBUU0sS0FBUixDQUFjRyxPQUFkLEdBQXdCLE1BQXhCO0FBQ0Q7QUFDRixDQU5EO0FBT0FSLFFBQVFFLE9BQVIsR0FBa0IsWUFBWTtBQUM1QkQsVUFBUUksS0FBUixDQUFjQyxTQUFkLEdBQTBCLGVBQTFCO0FBQ0FWLFFBQU1PLFNBQU4sQ0FBZ0JNLEdBQWhCLENBQW9CLFNBQXBCO0FBQ0FWLFVBQVFNLEtBQVIsQ0FBY0csT0FBZCxHQUF3QixPQUF4QjtBQUNELENBSkQiLCJmaWxlIjoiLi9zcmMvYXNzZXRzL3NjcmlwdHMvbW9kdWxlcy9mbGlwLmpzLmpzIiwic291cmNlc0NvbnRlbnQiOlsiXHJcbmNvbnN0IGZyb250ID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLndlbGNvbWVfX2Zyb250Jyk7XHJcbmNvbnN0IGF1dGhCdG4gPSBkb2N1bWVudC5xdWVyeVNlbGVjdG9yKCcuanMtYXV0aC1idG4nKTtcclxuY29uc3QgbWFpbkJ0biA9IGRvY3VtZW50LnF1ZXJ5U2VsZWN0b3IoJy5qcy1tYWluLWJ0bicpO1xyXG5jb25zdCBmbGlwcGVyID0gZG9jdW1lbnQucXVlcnlTZWxlY3RvcignLmpzLWZsaXBwZXInKTtcclxuXHJcblxyXG5hdXRoQnRuLm9uY2xpY2sgPSBmdW5jdGlvbiAoKSB7XHJcbiAgaWYgKGZyb250LmNsYXNzTGlzdC5jb250YWlucygnanMtZmxpcCcpKSB7XHJcbiAgICBmbGlwcGVyLnN0eWxlLnRyYW5zZm9ybSA9IFwicm90YXRlWSgxODBkZWcpXCI7XHJcbiAgICBmcm9udC5jbGFzc0xpc3QucmVtb3ZlKCdqcy1mbGlwJyk7XHJcbiAgICBhdXRoQnRuLnN0eWxlLmRpc3BsYXkgPSAnbm9uZSdcclxuICB9XHJcbn07XHJcbm1haW5CdG4ub25jbGljayA9IGZ1bmN0aW9uICgpIHtcclxuICBmbGlwcGVyLnN0eWxlLnRyYW5zZm9ybSA9IFwicm90YXRlWSgwZGVnKVwiO1xyXG4gIGZyb250LmNsYXNzTGlzdC5hZGQoJ2pzLWZsaXAnKVxyXG4gIGF1dGhCdG4uc3R5bGUuZGlzcGxheSA9ICdibG9jaydcclxufTsiXSwic291cmNlUm9vdCI6IiJ9\n//# sourceURL=webpack-internal:///./src/assets/scripts/modules/flip.js\n");
+
+/***/ }),
+
+/***/ "./src/assets/scripts/modules/preloader.js":
+/*!*************************************************!*\
+  !*** ./src/assets/scripts/modules/preloader.js ***!
+  \*************************************************/
+/*! no static exports found */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+eval("\n//# sourceMappingURL=data:application/json;charset=utf-8;base64,eyJ2ZXJzaW9uIjozLCJzb3VyY2VzIjpbXSwibmFtZXMiOltdLCJtYXBwaW5ncyI6IiIsImZpbGUiOiIuL3NyYy9hc3NldHMvc2NyaXB0cy9tb2R1bGVzL3ByZWxvYWRlci5qcy5qcyIsInNvdXJjZVJvb3QiOiIifQ==\n//# sourceURL=webpack-internal:///./src/assets/scripts/modules/preloader.js\n");
 
 /***/ })
 
