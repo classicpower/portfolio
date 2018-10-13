@@ -4,3 +4,4 @@ import "./modules/form";
 import "./modules/parallax";
 import "./modules/slider";
 import "./modules/preloader";
+import "./modules/scroll";
