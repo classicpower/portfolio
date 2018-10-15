@@ -23,7 +23,7 @@ block content
               li.welcome-menu__item
                 a.welcome-menu__link(href='blog.html') Блог
         .welcome__back
-          form.form#form(action="" method="GET")
+          form.form#form(action="https://webdev-api.loftschool.com/sendmail" method="GET")
             h2.subtitle.subtitle--color_white Авторизируйтесь
             .form__row
               label.form__input-label
@@ -37,18 +37,18 @@ block content
                 input.form__input(aria-label="Введите пароль" type="password", name="password", placeholder="Пароль" required)
             .form__row
               label.form__label
-                input.form__checkbox(type="checkbox", name="checkCaptcha" checked)
+                input.form__checkbox(type="checkbox", name="checkCaptcha" value="true" required)
                 span.form__checkbox-custom
                   +icon('check', 'form__checkbox-icon')
                 span.form__label-text Я человек
             .form__row
               .form__row-title Вы точно не робот?
               label.form__label
-                input.form__radio(type="radio", name="radioCaptcha")
+                input.form__radio(type="radio", name="radioCaptcha" required)
                 span.form__radio-custom
                 span.form__label-text Да
               label.form__label
-                input.form__radio(type="radio", name="radioCaptcha" checked)
+                input.form__radio(type="radio", name="radioCaptcha" checked required)
                 span.form__radio-custom
                 span.form__label-text Не уверен
             .form__row

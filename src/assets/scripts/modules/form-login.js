@@ -1,7 +1,8 @@
-const form = document.getElementById(form);
+const form = document.getElementById('form');
 const submit = document.querySelector('.form__submit');
-const action = form.attributes['action'].value;
-const method = form.attributes['method'].value;
+const action = form.getAttribute('action');
+const method = form.getAttribute('method');
+
 submit.addEventListener("click", function (e) {
   e.preventDefault();
   if (validateForm(form)) {
@@ -23,11 +24,21 @@ submit.addEventListener("click", function (e) {
   }
 });
 function validateForm(form) {
+  const name = form.elements.name;
+  const password = form.elements.password;
+  const checkCaptcha = form.elements.checkCaptcha;
+  const radioCaptcha = form.elements.radioCaptcha;
   let valid = true;
-  if (!validateField(form.elements.name)) {
+  if (!validateField(name)) {
     valid = false;
   }
-  if (!validateField(form.elements.phone)) {
+  if (!validateField(password)) {
+    valid = false;
+  }
+  if (!validateField(checkCaptcha)) {
+    valid = false;
+  }
+  if (!validateField(radioCaptcha)) {
     valid = false;
   }
   return valid;

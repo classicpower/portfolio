@@ -27,7 +27,6 @@ function validateForm(form) {
   let valid = true;
   const name = form.elements.name;
   const email = form.elements.email;
-  const fieldError = name.nextElementSibling;
   if (!validateField(name)) {
     valid = false;
   }
@@ -36,13 +35,6 @@ function validateForm(form) {
   }
   return valid;
 }
-// function createError(element) {
-//   const div = document.createElement('div');
-//   div.className = 'form__error';
-//   div.textContent = element.validationMessage;
-//   element.parentNode.insertBefore(div, element.nextSibling);
-//   return div;
-// }
 function validateField(field) {
   const fieldError = field.nextElementSibling;
   fieldError.textContent = field.validationMessage;
@@ -51,5 +43,5 @@ function validateField(field) {
     div.className = 'form__error-triangle';
     fieldError.appendChild(div);
   }
-  return field;
+  return field.checkValidity();
 }
