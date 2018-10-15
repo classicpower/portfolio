@@ -72,14 +72,14 @@
 									</nav>
 								</div>
 								<div class="welcome__back">
-									<form class="form" action="">
+									<form class="form" id="form" action="" method="GET">
 										<h2 class="subtitle subtitle--color_white">Авторизируйтесь</h2>
 										<div class="form__row">
 											<label class="form__input-label"><span class="form__input-icon">
 													<svg class="form__input-icon__login">
 														<use xlink:href="assets/images/icons/sprite.svg#login"></use>
 													</svg></span>
-												<input class="form__input" aria-label="Введите логин" type="text" name="login" placeholder="Логин">
+												<input class="form__input" aria-label="Введите логин" type="text" name="login" placeholder="Логин" required>
 											</label>
 										</div>
 										<div class="form__row">
@@ -87,12 +87,12 @@
 													<svg class="form__input-icon__password">
 														<use xlink:href="assets/images/icons/sprite.svg#password"></use>
 													</svg></span>
-												<input class="form__input" aria-label="Введите пароль" type="password" name="password" placeholder="Пароль">
+												<input class="form__input" aria-label="Введите пароль" type="password" name="password" placeholder="Пароль" required>
 											</label>
 										</div>
 										<div class="form__row">
 											<label class="form__label">
-												<input class="form__checkbox" type="checkbox" name="check-captcha" checked><span class="form__checkbox-custom">
+												<input class="form__checkbox" type="checkbox" name="checkCaptcha" checked><span class="form__checkbox-custom">
 													<svg class="form__checkbox-icon">
 														<use xlink:href="assets/images/icons/sprite.svg#check"></use>
 													</svg></span><span class="form__label-text">Я человек</span>
@@ -101,10 +101,10 @@
 										<div class="form__row">
 											<div class="form__row-title">Вы точно не робот?</div>
 											<label class="form__label">
-												<input class="form__radio" type="radio" name="radio-captcha"><span class="form__radio-custom"></span><span class="form__label-text">Да</span>
+												<input class="form__radio" type="radio" name="radioCaptcha"><span class="form__radio-custom"></span><span class="form__label-text">Да</span>
 											</label>
 											<label class="form__label">
-												<input class="form__radio" type="radio" name="radio-captcha" checked><span class="form__radio-custom"></span><span class="form__label-text">Не уверен</span>
+												<input class="form__radio" type="radio" name="radioCaptcha" checked><span class="form__radio-custom"></span><span class="form__label-text">Не уверен</span>
 											</label>
 										</div>
 										<div class="form__row">

@@ -133,13 +133,15 @@
 					<div class="reviews__form js-blur-wrapper">
 						<div class="reviews__form-blur js-blur"></div>
 						<div class="reviews__form-container">
-							<form class="form form__reviews form--bg_color" id="form" action="">
+							<form class="form form__reviews form--bg_color" id="form" action="https://webdev-api.loftschool.com/sendmail" method="POST">
 								<h2 class="form__subtitle subtitle">Связаться со мной</h2>
 								<div class="form__row form__row--reviews">
-									<input class="form__input form__input--reviews" aria-label="Введите имя" type="text" name="name" placeholder="Имя">
+									<input class="form__input form__input--reviews" aria-label="Введите имя" type="text" name="name" placeholder="Имя" required>
+									<div class="form__error"></div>
 								</div>
 								<div class="form__row form__row--reviews">
-									<input class="form__input form__input--reviews" aria-label="Введите email" type="text" name="email" placeholder="Email">
+									<input class="form__input form__input--reviews" aria-label="Введите email" type="email" name="email" placeholder="Email" required>
+									<div class="form__error"></div>
 								</div>
 								<div class="form__row form__row--reviews">
 									<textarea class="form__textarea" aria-label="Введите сообщение" name="message" placeholder="Ваше сообщение"></textarea>

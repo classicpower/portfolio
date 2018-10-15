@@ -3,7 +3,7 @@ const blur = (function () {
   const formBlur = document.querySelector('.js-blur');
 
   return {
-    set: function() {
+    set: function () {
       const bgWidth = document.querySelector('.js-reviews-bg').offsetWidth;
       const bgHeight = document.querySelector('.js-reviews-bg').offsetHeight;
       const posLeft = -container.offsetLeft;
@@ -20,9 +20,9 @@ const blur = (function () {
   }
 }());
 
-window.onresize = function() {
+window.onresize = function () {
   blur.set();
 }
-window.onload = function() {
+window.onload = function () {
   blur.set();
 }

@@ -53,12 +53,14 @@ block section_reviews
     .reviews__form.js-blur-wrapper
       .reviews__form-blur.js-blur
       .reviews__form-container
-        form#form.form.form__reviews.form--bg_color(action="")
+        form#form.form.form__reviews.form--bg_color(action="https://webdev-api.loftschool.com/sendmail" method="POST")
           h2.form__subtitle.subtitle Связаться со мной
           .form__row.form__row--reviews
-            input.form__input.form__input--reviews(aria-label="Введите имя" type="text" name="name" placeholder="Имя")
+            input.form__input.form__input--reviews(aria-label="Введите имя" type="text" name="name" placeholder="Имя" required)
+            .form__error
           .form__row.form__row--reviews
-            input.form__input.form__input--reviews(aria-label="Введите email" type="text" name="email" placeholder="Email")
+            input.form__input.form__input--reviews(aria-label="Введите email" type="email" name="email" placeholder="Email" required)
+            .form__error
           .form__row.form__row--reviews
             textarea.form__textarea(aria-label="Введите сообщение" name="message" placeholder="Ваше сообщение")
           .form__row.form__row--reviews
