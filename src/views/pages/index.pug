@@ -39,7 +39,7 @@ block content
                 .form__error
             .form__row
               label.form__label
-                input.form__checkbox(type="checkbox", name="checkCaptcha" value="не робот" cheked)
+                input.form__checkbox(type="checkbox", name="checkCaptcha" value="не робот")
                 span.form__checkbox-custom
                   +icon('check', 'form__checkbox-icon')
                 span.form__label-text Я человек
@@ -51,9 +51,10 @@ block content
                 span.form__radio-custom
                 span.form__label-text Да
               label.form__label.form__label--radio
-                input.form__radio(type="radio" name="radioCaptcha" value="no")
+                input.form__radio(type="radio" name="radioCaptcha" value="no" checked)
                 span.form__radio-custom
                 span.form__label-text Не уверен
+              .form__error
             .form__row
               .form__list
                 button.form__button.js-main-btn(type="button") На главную
