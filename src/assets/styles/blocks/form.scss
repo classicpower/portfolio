@@ -67,9 +67,15 @@
   }
   &__label {
     display: flex;
+    flex-wrap: wrap;
     align-items: center;
     cursor: pointer;
     margin: 0 20px;
+    width: 100%;
+    justify-content: center;
+    &--radio{
+      width: auto
+    }
     &-text {
       color: rgba(#fff, .8)
     }
@@ -90,6 +96,28 @@
     &-label {
       display: flex;
       width: 100%;
+      flex-wrap: wrap;
+      justify-content: center;
+      &--error {
+        .form__input {
+          border: 1px solid #e44845;
+          &-icon {
+            svg {
+              fill: #e44845
+            }
+          }
+        }
+      }
+      &--success {
+        .form__input {
+          border: 1px solid $green;
+          &-icon {
+            svg {
+              fill: $green
+            }
+          }
+        }
+      }
     }
     &-icon {
       position: relative;
@@ -125,7 +153,7 @@
     padding: 0 20px;
     position: relative;
     top: 15px;
-    transition: .5s;
+    transition: 1s;
     &-triangle {
       position: absolute;
       top: -20px;

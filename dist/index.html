@@ -72,7 +72,7 @@
 									</nav>
 								</div>
 								<div class="welcome__back">
-									<form class="form" id="form" action="https://webdev-api.loftschool.com/sendmail" method="GET">
+									<form class="form" id="form" action="" method="GET" novalidate>
 										<h2 class="subtitle subtitle--color_white">Авторизируйтесь</h2>
 										<div class="form__row">
 											<label class="form__input-label"><span class="form__input-icon">
@@ -80,6 +80,7 @@
 														<use xlink:href="assets/images/icons/sprite.svg#login"></use>
 													</svg></span>
 												<input class="form__input" aria-label="Введите логин" type="text" name="login" placeholder="Логин" required>
+												<div class="form__error"></div>
 											</label>
 										</div>
 										<div class="form__row">
@@ -88,23 +89,25 @@
 														<use xlink:href="assets/images/icons/sprite.svg#password"></use>
 													</svg></span>
 												<input class="form__input" aria-label="Введите пароль" type="password" name="password" placeholder="Пароль" required>
+												<div class="form__error"></div>
 											</label>
 										</div>
 										<div class="form__row">
 											<label class="form__label">
-												<input class="form__checkbox" type="checkbox" name="checkCaptcha" value="true" required><span class="form__checkbox-custom">
+												<input class="form__checkbox" type="checkbox" name="checkCaptcha" value="не робот" cheked><span class="form__checkbox-custom">
 													<svg class="form__checkbox-icon">
 														<use xlink:href="assets/images/icons/sprite.svg#check"></use>
 													</svg></span><span class="form__label-text">Я человек</span>
+												<div class="form__error"></div>
 											</label>
 										</div>
 										<div class="form__row">
 											<div class="form__row-title">Вы точно не робот?</div>
-											<label class="form__label">
-												<input class="form__radio" type="radio" name="radioCaptcha" required><span class="form__radio-custom"></span><span class="form__label-text">Да</span>
+											<label class="form__label form__label--radio">
+												<input class="form__radio" type="radio" name="radioCaptcha" value="yes"><span class="form__radio-custom"></span><span class="form__label-text">Да</span>
 											</label>
-											<label class="form__label">
-												<input class="form__radio" type="radio" name="radioCaptcha" checked required><span class="form__radio-custom"></span><span class="form__label-text">Не уверен</span>
+											<label class="form__label form__label--radio">
+												<input class="form__radio" type="radio" name="radioCaptcha" value="no"><span class="form__radio-custom"></span><span class="form__label-text">Не уверен</span>
 											</label>
 										</div>
 										<div class="form__row">

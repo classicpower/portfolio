@@ -23,32 +23,35 @@ block content
               li.welcome-menu__item
                 a.welcome-menu__link(href='blog.html') Блог
         .welcome__back
-          form.form#form(action="https://webdev-api.loftschool.com/sendmail" method="GET")
+          form.form#form(action="" method="GET" novalidate)
             h2.subtitle.subtitle--color_white Авторизируйтесь
             .form__row
               label.form__input-label
                 span.form__input-icon
                   +icon('login', 'form__input-icon__login')
                 input.form__input(aria-label="Введите логин" type="text", name="login", placeholder="Логин" required)
+                .form__error
             .form__row
               label.form__input-label
                 span.form__input-icon
                   +icon('password', 'form__input-icon__password')
                 input.form__input(aria-label="Введите пароль" type="password", name="password", placeholder="Пароль" required)
+                .form__error
             .form__row
               label.form__label
-                input.form__checkbox(type="checkbox", name="checkCaptcha" value="true" required)
+                input.form__checkbox(type="checkbox", name="checkCaptcha" value="не робот" cheked)
                 span.form__checkbox-custom
                   +icon('check', 'form__checkbox-icon')
                 span.form__label-text Я человек
+                .form__error
             .form__row
               .form__row-title Вы точно не робот?
-              label.form__label
-                input.form__radio(type="radio", name="radioCaptcha" required)
+              label.form__label.form__label--radio
+                input.form__radio(type="radio" name="radioCaptcha" value="yes")
                 span.form__radio-custom
                 span.form__label-text Да
-              label.form__label
-                input.form__radio(type="radio", name="radioCaptcha" checked required)
+              label.form__label.form__label--radio
+                input.form__radio(type="radio" name="radioCaptcha" value="no")
                 span.form__radio-custom
                 span.form__label-text Не уверен
             .form__row
