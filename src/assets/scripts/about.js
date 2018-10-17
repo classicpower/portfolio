@@ -3,4 +3,4 @@ import "./modules/footer";
 import "./modules/skills";
 import "./modules/parallax";
 import "./modules/preloader";
-import "./modules/scroll";
+import "./modules/scrollDown";

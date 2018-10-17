@@ -41,6 +41,13 @@ password.addEventListener('change', function () {
     validateField(password, "");
   }
 });
+checkCaptcha.addEventListener('change', function () {
+  if (!checkCaptcha.checked) {
+    validateField(checkCaptcha, "Робот! Ты не пройдешь!");
+  } else {
+    validateField(checkCaptcha, "");
+  }
+});
 
 function validateForm(form) {
   const login = form.elements.login;

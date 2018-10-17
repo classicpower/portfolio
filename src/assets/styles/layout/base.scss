@@ -30,6 +30,9 @@ body {
 .wrapper {
   min-height: 100%;
   position: relative;
+  &-hidden{
+    opacity: 0;
+  }
 }
 
 .container {

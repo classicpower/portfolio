@@ -4,5 +4,6 @@ import "./modules/blur";
 import "./modules/parallax";
 import "./modules/slider";
 import "./modules/preloader";
-import "./modules/scroll";
+import "./modules/scrollDown";
+import "./modules/scrollTop";
 import "./modules/form-works";

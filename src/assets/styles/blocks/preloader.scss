@@ -1,40 +1,46 @@
-.preloader{
+.preloader {
   position: fixed;
   height: 100vh;
   min-height: 650px;
   width: 100%;
   top: 0;
-  left: -100%;
+  left: 0;
   right: 0;
   bottom: 0;
+  background-image: url('assets/images/preloader/forest_prel_bg.jpg');
+  background-position: center center;
+  background-size: cover;
   display: flex;
   justify-content: center;
   align-items: center;
   opacity: 1;
   transition: opacity .3s, left .5s;
   z-index: 9999;
-  &__bg{
-    background-image: url('assets/images/preloader/forest_prel_bg.jpg');
-    background-position: center center;
-    background-size: cover;
-    position: absolute;
-    top: 0;
-    left: 0;
-    bottom: 0;
-    right: 0;
-  }
-  &__image{
+  &__image {
     z-index: 100;
   }
-  &__path{
-    &--top{
-      transform: translateY(0%)
+  &__path {
+    &--top {
+      transform: translateY(0%);
+      animation: spin .8s infinite ease-in;
     }
-    &--center{
-      transform: translateY(25%)
+    &--center {
+      transform: translateY(25%);
+      animation: spin .9s infinite ease-in;
+      animation-delay: .3s;
     }
-    &--bottom{
-      transform: translateY(50%)
+    &--bottom {
+      transform: translateY(50%);
+      animation: spin 1s infinite ease-in;
+      animation-delay: .7s;
+    }
+  }
+  @keyframes spin {
+    from {
+      stroke-dasharray: 0 120;
+    }
+    to {
+      stroke-dasharray: 120 0;
     }
   }
 }
