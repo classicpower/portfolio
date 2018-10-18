@@ -25,6 +25,7 @@ const preloader = (function () {
             this.shadowImgAdd();
           } else if (preloadImg[i].hasAttribute('style') && regImgUrl.test(preloadImg[i].getAttribute('style'))) {
             img = (preloadImg[i].getAttribute('style').slice(22, -1));
+            console.log(img);
             this.shadowImgAdd();
           }
           allImg = 100 / imgArr.length;

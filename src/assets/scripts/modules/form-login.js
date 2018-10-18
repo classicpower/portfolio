@@ -17,7 +17,6 @@ submit.addEventListener("click", function (e) {
       radioCaptcha: form.elements.radioCaptcha.value,
       to: "karasev.dev@gmail.com"
     };
-    console.log(data);
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.open(method, action);
@@ -27,69 +26,81 @@ submit.addEventListener("click", function (e) {
 
   }
 });
-login.addEventListener('change', function () {
-  if (this.value.length <= 0) {
-    validateField(login, "Вы не ввели логин");
-  } else {
-    validateField(login, "");
-  }
-});
-password.addEventListener('change', function () {
-  if (this.value.length <= 3) {
-    validateField(password, "Пароль должен быть больше 3х символов");
-  } else {
-    validateField(password, "");
-  }
-});
-checkCaptcha.addEventListener('change', function () {
-  if (!checkCaptcha.checked) {
-    validateField(checkCaptcha, "Робот! Ты не пройдешь!");
-  } else {
-    validateField(checkCaptcha, "");
-  }
-});
+// login.addEventListener('change', function () {
+//   if (this.value.length <= 0) {
+//     validateField(login, "Вы не ввели логин");
+//   } else {
+//     validateField(login, "");
+//   }
+// });
+// password.addEventListener('change', function () {
+//   if (this.value.length <= 3) {
+//     validateField(password, "Пароль должен быть больше 3х символов");
+//   } else {
+//     validateField(password, "");
+//   }
+// });
+// checkCaptcha.addEventListener('change', function () {
+//   if (!checkCaptcha.checked) {
+//     validateField(checkCaptcha, "Робот! Ты не пройдешь!");
+//   } else {
+//     validateField(checkCaptcha, "");
+//   }
+// });
+// for (let i = 0; i < radioCaptcha.length; i++) {
+//   const radio = radioCaptcha[i];
+//   radio.addEventListener('change', function () {
+//     if (this.value === 'no') {
+//       validateField(radioCaptcha, "Робот! Ты не пройдешь!");
+//     } else {
+//       validateField(radioCaptcha, "");
+//     }
+//   })
+
+// }
 
 function validateForm(form) {
   const login = form.elements.login;
   const password = form.elements.password;
   const checkCaptcha = form.elements.checkCaptcha;
   const radioCaptcha = form.elements.radioCaptcha;
-  let valid = true;
   if (login.value.length <= 0) {
     validateField(login, "Вы не ввели логин");
-    valid = false
+    login.classList.add('js-validation');
   } else {
     validateField(login, "");
-    valid = true
-  }
+    login.classList.remove('js-validation');
+  };
   if (password.value.length <= 3) {
     validateField(password, "Пароль должен быть больше 3х символов");
-    valid = false
+    password.classList.add('js-validation');
   } else {
-    validateField(password, "")
-    valid = true
-  }
+    validateField(password, "");
+    password.classList.remove('js-validation');
+  };
 
   if (!checkCaptcha.checked) {
     validateField(checkCaptcha, "Робот! Ты не пройдешь!");
-    valid = false;
+    checkCaptcha.classList.add('js-validation');
   } else {
     validateField(checkCaptcha, "");
-    valid = true;
-  }
+    checkCaptcha.classList.remove('js-validation');
+  };
   for (let i = 0; i < radioCaptcha.length; i++) {
     const radio = radioCaptcha[i];
-    if (radio.checked) {
-      validateField(radioCaptcha, "Робот! Ты не пройдешь!");
-      valid = false;
-    } else {
-      validateField(radioCaptcha, "");
-      valid = true;
+    if(radio.checked){
+      if (radio.value === 'no') {
+        validateField(radioCaptcha, "Робот! Ты не пройдешь!");
+        radio.classList.add('js-validation');
+      }
+      if (radio.value === 'yes'){
+        validateField(radioCaptcha, "");
+        radioCaptcha[1].classList.remove('js-validation');
+      }
     }
-
-  }
-
-  return valid;
+  };
+  const validArray = document.querySelectorAll('.js-validation');
+  if(validArray.length === 0) return true;
 }
 function validateField(field, messege) {
   const fieldError = field.nextElementSibling;
@@ -108,7 +119,6 @@ function validateField(field, messege) {
     }
   }
   if (field === checkCaptcha) {
-    console.log(parentLabel);
     const lastFieldError = parentLabel.children[3];
     lastFieldError.textContent = messege;
     if (messege) {
