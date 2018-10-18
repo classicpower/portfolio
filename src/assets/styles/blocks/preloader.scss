@@ -22,17 +22,17 @@
   &__path {
     &--top {
       transform: translateY(0%);
-      animation: spin .8s infinite ease-in;
+      animation: spin 1s infinite ease-in;
     }
     &--center {
       transform: translateY(25%);
-      animation: spin .9s infinite ease-in;
+      animation: spin 1s infinite ease-in;
       animation-delay: .3s;
     }
     &--bottom {
       transform: translateY(50%);
       animation: spin 1s infinite ease-in;
-      animation-delay: .7s;
+      animation-delay: .5s;
     }
   }
   @keyframes spin {
