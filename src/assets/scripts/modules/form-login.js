@@ -1,4 +1,4 @@
-// import axios from 'axios';
+import axios from 'axios';
 
 const form = document.getElementById('form');
 const submit = document.querySelector('.form__submit');
@@ -12,26 +12,23 @@ const radioCaptcha = form.elements.radioCaptcha;
 submit.addEventListener("click", function (e) {
   e.preventDefault();
   if (validateForm(form)) {
-    // const data = {
-    //   name: form.elements.name.value,
-    //   password: form.elements.password.value,
-    // };
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.open(method, action);
-    console.log(`method ${method} / action ${action}`);
     xhr.send(new FormData(form));
-    console.log(`data ${new FormData(form)}`);
     xhr.addEventListener("load", function () {
-      console.log(xhr.status);
-      console.log(`xhr.response ${xhr.response}`);
-      console.log(`xhr.response.token ${xhr.response.token}`);
-      console.log(`xhr.response.ttl ${xhr.response.ttl}`);
+      if (xhr.status === 200) {
+        const ttl = Math.floor(Date.now() / 1000 + xhr.response.ttl);
 
-      if (xhr.status >= 400) {
-        console.log("что то не так");
+        localStorage.setItem('ttl', ttl);
+        localStorage.setItem('token', xhr.response.token);
+
+        axios.defaults.headers['Authorization'] = `Bearer ${localStorage.getItem('token')}`;
+
+        window.location.href = "./admin";
+
       } else {
-        console.log(xhr.response);
+        console.log(xhr.statusText);
       }
     })
 
