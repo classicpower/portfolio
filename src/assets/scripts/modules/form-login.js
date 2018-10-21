@@ -1,3 +1,5 @@
+// import axios from 'axios';
+
 const form = document.getElementById('form');
 const submit = document.querySelector('.form__submit');
 const action = form.getAttribute('action');
@@ -13,8 +15,6 @@ submit.addEventListener("click", function (e) {
     const data = {
       name: form.elements.name.value,
       password: form.elements.password.value,
-      checkCaptcha: form.elements.checkCaptcha.value,
-      radioCaptcha: form.elements.radioCaptcha.value,
       to: "karasev.dev@gmail.com"
     };
     const xhr = new XMLHttpRequest();
