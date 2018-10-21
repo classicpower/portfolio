@@ -22,6 +22,9 @@ submit.addEventListener("click", function (e) {
     xhr.open(method, action);
     xhr.send(JSON.stringify(data));
     xhr.addEventListener("load", function () {
+      console.log(xhr.status);
+      console.log(xhr.response);
+
       if (xhr.status >= 400) {
         console.log("что то не так");
       } else {
