@@ -25,7 +25,8 @@ submit.addEventListener("click", function (e) {
     xhr.addEventListener("load", function () {
       console.log(xhr.status);
       console.log(`xhr.response ${xhr.response}`);
-      console.log(xhr.responseText);
+      console.log(`xhr.response.token ${xhr.response.token}`);
+      console.log(`xhr.response.ttl ${xhr.response.ttl}`);
 
       if (xhr.status >= 400) {
         console.log("что то не так");
