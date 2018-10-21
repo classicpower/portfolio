@@ -12,16 +12,16 @@ const radioCaptcha = form.elements.radioCaptcha;
 submit.addEventListener("click", function (e) {
   e.preventDefault();
   if (validateForm(form)) {
-    const data = {
-      name: form.elements.name.value,
-      password: form.elements.password.value,
-    };
+    // const data = {
+    //   name: form.elements.name.value,
+    //   password: form.elements.password.value,
+    // };
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.open(method, action);
     console.log(`method ${method} / action ${action}`);
-    xhr.send(JSON.stringify(data));
-    console.log(`data ${JSON.stringify(data)}`);
+    xhr.send(new FormData(form));
+    console.log(`data ${new FormData(form)}`);
     xhr.addEventListener("load", function () {
       console.log(xhr.status);
       console.log(`xhr.response ${xhr.response}`);
