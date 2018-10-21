@@ -19,8 +19,9 @@ submit.addEventListener("click", function (e) {
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json";
     xhr.open(method, action);
+    console.log(method);
+    console.log(action);
     xhr.send(JSON.stringify(data));
-    console.log(JSON.stringify(data));
     xhr.addEventListener("load", function () {
       console.log(xhr.status);
       console.log(xhr.response);
