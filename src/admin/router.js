@@ -5,7 +5,7 @@ import axios from "axios";
 Vue.use(VueRouter);
 
 const guard = axios.create({
-  baseURL: "http://localhost:8000"
+  baseURL: "https://webdev-api.loftschool.com/"
 });
 
 import skills from './components/skills.vue';
