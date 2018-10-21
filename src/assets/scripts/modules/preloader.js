@@ -1,5 +1,7 @@
 const preloader = (function () {
   const preloadImg = document.getElementsByTagName('*');
+  const canvas = document.getElementsByTagName ('canvas')[0];
+  console.log(canvas);
   const preloadBlock = document.querySelector('.js-preloader');
   const preloadText = document.querySelector('.js-preloader-text');
   const regImgUrl = /background-image: url\(['"]?(.*?)['"]?\)/i;
@@ -25,11 +27,9 @@ const preloader = (function () {
             this.shadowImgAdd();
           } else if (preloadImg[i].hasAttribute('style') && regImgUrl.test(preloadImg[i].getAttribute('style'))) {
             img = (preloadImg[i].getAttribute('style').slice(22, -1));
-            console.log(img);
             this.shadowImgAdd();
           }
           allImg = 100 / imgArr.length;
-          
           for (let j = 0; j < imgArr.length; j++) {
             imgArr[j].onload = function () {
               progress += allImg;

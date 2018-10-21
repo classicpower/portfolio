@@ -23,13 +23,13 @@ block content
               li.welcome-menu__item
                 a.welcome-menu__link(href='blog.html') Блог
         .welcome__back
-          form.form#form(action="" method="GET" novalidate)
+          form.form#form(action="https://webdev-api.loftschool.com/login" method="POST" novalidate)
             h2.subtitle.subtitle--color_white Авторизируйтесь
             .form__row
               label.form__input-label
                 span.form__input-icon
                   +icon('login', 'form__input-icon__login')
-                input.form__input(aria-label="Введите логин" type="text", name="login", placeholder="Логин")
+                input.form__input(aria-label="Введите логин" type="text", name="name", placeholder="Логин")
                 .form__error
             .form__row
               label.form__input-label

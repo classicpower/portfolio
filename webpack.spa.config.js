@@ -19,7 +19,7 @@ const config = {
       },
       {
         test: /\.scss$/,
-        use: ["vue-style-loader", "css-loader", "postcss-loader"]
+        use: ["vue-style-loader", "css-loader", "sass-loader"]
       },
       {
         enforce: "pre",
@@ -32,7 +32,7 @@ const config = {
         loader: "vue-loader",
         options: {
           loaders: {
-            scss: ["vue-style-loader", "css-loader", "postcss-loader"]
+            scss: ["vue-style-loader", "css-loader", "sass-loader"]
           }
         }
       },
