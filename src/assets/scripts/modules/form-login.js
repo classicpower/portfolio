@@ -20,10 +20,10 @@ submit.addEventListener("click", function (e) {
     xhr.responseType = "json";
     xhr.open(method, action);
     xhr.send(JSON.stringify(data));
+    console.log(JSON.stringify(data));
     xhr.addEventListener("load", function () {
       console.log(xhr.status);
-      console.log(xhr.response.token);
-      console.log(xhr.response.ttl);
+      console.log(xhr.response);
 
       if (xhr.status >= 400) {
         console.log("что то не так");
