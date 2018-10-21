@@ -15,7 +15,6 @@ submit.addEventListener("click", function (e) {
     const data = {
       name: form.elements.name.value,
       password: form.elements.password.value,
-      to: "karasev.dev@gmail.com"
     };
     const xhr = new XMLHttpRequest();
     xhr.responseType = "json";
