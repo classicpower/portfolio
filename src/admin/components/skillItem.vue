@@ -26,7 +26,7 @@ tr(v-else)
     ) Добавить
 </template>
 <script>
-// import { mapActions } from "vuex";
+import { mapActions } from "vuex";
 export default {
   props: {
     skill: {
@@ -51,11 +51,11 @@ export default {
       }
     };
   },
-  // methods: {
-  //   ...mapActions({
-  //     addNewSkill: "skills/add",
-  //     removeSkill: "skills/remove"
-  //   })
-  // }
+  methods: {
+    ...mapActions({
+      addNewSkill: "skills/add",
+      removeSkill: "skills/remove"
+    })
+  }
 };
 </script>
