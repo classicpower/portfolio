@@ -4,3 +4,4 @@ import "./modules/skills";
 import "./modules/parallax";
 import "./modules/preloader";
 import "./modules/scrollDown";
+import "./modules/map";

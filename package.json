@@ -74,6 +74,7 @@
   "dependencies": {
     "@babel/polyfill": "^7.0.0",
     "axios": "^0.18.0",
+    "google-maps": "^3.3.0",
     "gsap": "^2.0.2",
     "normalize.css": "^7.0.0",
     "promptly": "^3.0.3",
