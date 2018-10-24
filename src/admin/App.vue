@@ -14,13 +14,15 @@
 import header from "./components/header";
 import tabs from "./components/tabs";
 import skills from "./components/skills";
+import form from "./components/form";
 import { mapActions, mapState } from "vuex";
 
 export default {
   components: {
     appHeader: header,
     tabs,
-    skills
+    skills,
+    appForm: form
   },
   computed:{
     ...mapState('skills',{

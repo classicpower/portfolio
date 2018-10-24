@@ -1,5 +1,6 @@
 <template lang="pug">
   #about
+    app-form
     h1 Страница обо мне
     skills-row(
       v-for="type in types"
@@ -11,12 +12,12 @@
 
 <script>
 import skillsRow from "./skillsRow";
-// import form from "./form";
+import form from "./form";
 // import { mapState, mapActions } from "vuex";
 export default {
   components: {
-    skillsRow
-    // appForm: form
+    skillsRow,
+    appForm: form
   },
   props: {
     skills: {

@@ -9,7 +9,8 @@
         :skill='skill'
       )
       skill-item(
-        :editmode="true"
+        :editmode="true",
+        :typeId="type.id"
       )
 </template>
 
